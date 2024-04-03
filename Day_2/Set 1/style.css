@@ -1,0 +1,26 @@
+/* Above margin and lower margin collapses and higher one takes over */
+
+
+
+.parent{
+    background-color: blue;
+    padding: 16px;
+    margin: 16px;
+    border: 10px solid brown;
+}
+
+.parent p{
+    background-color: aquamarine;
+}
+
+#p-cen{
+
+    text-align: center !important;
+}
+
+#p-try{
+    background-color: black; */
+    /* width: 50px; */
+     overflow-y: hidden;
+}
+

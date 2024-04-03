@@ -1,0 +1,165 @@
+ /* Above margin and lower margin collapses and higher one takes over */
+/* : is written for pseudo classes and :: are written for pseudo elements */
+/* Just like nth-child  nth-of-type is also used */
+
+
+ 
+
+
+ /* 
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+ .parent{
+    font-size: 50px;
+}
+
+.child{
+ 
+    font-size: 2rem;  */
+/* }
+
+ .btn{
+    display: block; */
+    /* background-color: aqua;
+    margin: 10px auto;
+    font-size: 35px;
+    border-radius: 10px;
+    /* width: 200px; */
+    /* width: 8em;
+}   */
+/* 
+.btn-small{
+    font-size: 20px;
+}
+
+.btn-big{
+    font-size: 50px;
+}
+
+body{
+    height: 100%;
+}
+
+.parent{
+   
+    font-size: 50px;
+}
+
+.child{
+    background-color: rgb(209, 22, 22)(178, 40, 40)(178, 40, 40);
+    font-size: 2rem; 
+    max-height: 10px;
+} */
+
+ 
+/* *{
+    margin: 0;
+    padding: 0;
+
+} */
+
+
+
+body{
+    /* background-color: aqua; */
+}
+/* 
+.child{
+    ol{
+        background-color:yellow;
+    }
+}
+
+/* .child:nth-child(){ */
+    /* background-color: blue; */
+/* } */
+
+
+
+/* .child:last-child{
+    background-color: bisque;
+    ul :nth-child(2){
+        background-color: blue;
+    }
+} */
+
+
+ul{
+    /* list-style-position: inside; */
+}
+
+/* .parent{
+    .child  ol li:last-child{
+        background-color: brown;
+
+    }
+}
+
+.child{
+    ul:last-child{
+        li:nth-child(3){
+
+            background-color: blue;
+        }
+    }
+}
+
+.list{
+    background-color:aquamarine;
+}
+
+.list li:nth-child(odd){
+    background-color: grey;
+} */
+/* .list li:nth-child(even){
+    background-color: white;
+}
+
+.parent+ul{
+    background-color:blue ;
+}  */
+
+
+.parent{
+    background-color: aqua;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.child{
+    background-color: salmon;
+    height: 20px;
+    width: 30px;
+    border: 2px solid yellow;
+    flex-basis: 50px;
+}
+
+.parent2{
+    /* justify-content: space-evenly; */
+    flex-direction: row-reverse;
+}
+
+.parent3{
+    justify-content: space-around;
+}
+
+.parent4{
+    justify-content: flex-end;
+    .child{
+        /* align-self:last baseline; */
+    }
+}
+
+.logo{
+    
+    order: 3;
+    /* align-self:stretch; */
+}
