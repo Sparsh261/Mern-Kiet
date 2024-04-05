@@ -1,0 +1,123 @@
+/* Read about Grid area , row span and col span  */
+/* grid-templateicolums: repeat(arto-fit, minmax(50px,1fr)) */
+
+
+
+
+
+.parent{
+    display: grid;
+    /* grid-template-columns: 100px 50px 50px; */
+    /* grid-template-columns: repeat(4,40px); */
+    grid-template-columns: 1fr 1fr 1fr;
+
+    /* grid-template-rows: repeat(3,50px); */
+    grid-auto-rows: 50px;
+
+    background-color: yellow;
+
+    column-gap: 10px;
+    row-gap: 10px;
+
+}
+
+.child{
+    background-color:lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.try{
+    display: grid;
+    /* grid-template-columns: 100px 50px 50px; */
+    /* grid-template-columns: repeat(4,40px); */
+    grid-template-columns: 1fr 1fr 1fr;
+
+    /* grid-template-rows: repeat(3,50px); */
+    grid-auto-rows:  50px;
+
+    background-color: yellow;
+
+    /* column-gap: 10px; */
+    /* row-gap: 10px; */
+   
+}
+
+.header{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.menu{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: red;
+}
+
+.main{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    background-color: blueviolet;
+}
+
+.footer{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-color: brown;
+}
+
+
+
+.try2{
+    display: grid;
+    /* grid-template-columns: 100px 50px 50px; */
+    /* grid-template-columns: repeat(4,40px); */
+    grid-template-columns: auto ;
+
+    grid-template-rows: auto;
+    grid-auto-rows: 50px;
+
+    background-color: yellow;
+}
+
+.top1{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: aqua;
+}
+
+.side1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 7;
+    background-color: antiquewhite;
+}
+
+.side2{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 7;
+    background-color:blue;
+}
+

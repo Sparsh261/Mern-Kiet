@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent{
+
+    transition-property: width;
+transition-duration: 1s;
+transition-timing-function:ease-in;
+
+    background-color: aqua;
+    border: 2px solid red;
+    text-align: center;
+
+    h1{
+     
+    }
+}
+
+@media(800px <= width <= 1200px){
+    .parent{
+        background-color: blue;
+        width: 500px;
+    }
+}
