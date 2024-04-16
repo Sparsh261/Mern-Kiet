@@ -1,0 +1,19 @@
+Flat map
+
+flat
+
+Promise api
+Call back api
+Synchronus Api
+
+URL {
+        https -- protocol
+        www.amazon.com -- origin
+        net part is path/route
+    }
+URI
+
+Status Code
+
+object to string
+string to object
