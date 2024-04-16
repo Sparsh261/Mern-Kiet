@@ -1,0 +1,18 @@
+mac Address
+Router
+
+latency -- Time delay in reaching the request to server from client
+Response Time -- 
+Processing Time -- 
+
+Throughput
+BandWidth
+
+DNS
+HTTP
+HTTPS
+
+REPL -- Read Evaluate Process Loop
+
+Single Responsibility Principle -- One file should do only one function
+
