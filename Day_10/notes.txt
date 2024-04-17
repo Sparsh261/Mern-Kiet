@@ -1,0 +1,15 @@
+Structure
+
+Day-10
+
+    Controllers
+        productController
+        userController
+
+    Routes
+        productRoute
+        userRoute
+
+    index.js   {
+                        
+                }
