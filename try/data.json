@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Sparsh",
+        "roll": 100,
+        "marks": 500
+    },
+    {
+        "name": "Raj",
+        "roll": 101,
+        "marks": 501
+    },
+    {
+        "name": "Sonal",
+        "roll": 102,
+        "marks": 502
+    }
+]
+
+
+
+
+[
+    {
+        
+        "name": "Maths",
+        "depart": "Mathematics",
+        
+    },
+    {
+        
+        "name": "Science",
+        "depart": "Scientific",
+        
+    },
+    {
+        
+        "name": "Commerce",
+        "depart": "Commercial",
+        
+    },
+    {
+        
+        "name": "SST",
+        "depart": "Arts",
+        
+    }
+]
