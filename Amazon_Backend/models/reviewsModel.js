@@ -5,9 +5,11 @@ const reviewSchema = mongoose.Schema({
     rating:Number,
     productId: {
         type:String,
+        required: true
     },
     userId: {
         type:String,
+        required: true
     },
     createdAt : {
         type : Date,
