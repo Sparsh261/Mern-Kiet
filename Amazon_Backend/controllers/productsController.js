@@ -1,7 +1,7 @@
 const productModel = require('../models/productsModel.js');
 
 const getAllProducts = async (req, res) => {
-    const {sort='price',page=1,pageSize=8,fields="-info",...q} = req.query;
+    const {sort='price',page=1,pageSize=100,fields="-info",...q} = req.query;
     try {
 
         let query = productModel.find();
@@ -18,7 +18,9 @@ const getAllProducts = async (req, res) => {
 
         query = query.select(fields.split(',').join(' '));
 
-        const data = await query;
+        const data = await query.populate({path:"review",model:"Reviews"})
+        .then((result)=>{return result}).catch((err)=>console.log(err));
+;
 
         const totalResults = await productModel.countDocuments()
 

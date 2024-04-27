@@ -17,10 +17,10 @@ const productSchema = mongoose.Schema({
     brand: String,
     category: String,
     thumbnail: String,
-    review:{
+    review:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'reviews'
-    },
+        ref: 'Reviews'
+    }],
     images: [String]
 })
 
