@@ -27,7 +27,7 @@ We can render two roots of reaact in one single page
 
 JSX -- 
 
-Babel converts html to react jsx
+Babel converts jsx  to react element.
 
 
 Babel can be used without npm by directly using cdn link in script but we have to add type="text/babel" in app.js file.
@@ -39,3 +39,19 @@ const list = <ul>
                 }
             </ul>
 This is a react elelmet
+
+
+
+Bundlers
+
+webpack   // Used by react 
+parcel
+vite  // fastest
+
+
+
+HMR -- HOT Reloading
+
+
+our made files are not served on website.
+The js file in dist app is served on website and mpaping between our files and served files is done by .map file called source map.

@@ -62,7 +62,7 @@ const root = ReactDOM.createRoot(parent)  // It is the link between root of html
 const str = "Hello from React";
 
 const heading = <h1>{str}</h1>
-const l1 = <li > Apple </li>
+const l1 = <li style={{backgroundColor:"red"}} > Apple </li>
 const l2 = <li> Banana </li>
 
 // const list = <ul>
@@ -75,5 +75,4 @@ const list = <ul>
                     arr.map(a=>{return a})
                 }
             </ul>
-
 root.render(list)
