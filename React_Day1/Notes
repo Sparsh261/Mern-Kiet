@@ -1,0 +1,41 @@
+CDN
+
+The dom tree in js goes to react.
+then if any change occurs the firstly the change occurs in virtual dom in react and then change in real dom in js.
+
+React and React Dom are separate.
+
+React is used not only for developent
+
+
+
+
+const listitem1 = React.createElement('li', {key:'li1', className:'li1', name:"Sparsh"}, 
+                                                style:{
+                                                        backgroundColor:'red'
+                                                    }
+                                             "Banana");
+you can give any thing in {} in above line and it will add in element li in dom in js
+
+
+
+
+We can render two roots of reaact in one single page
+
+
+
+
+JSX -- 
+
+Babel converts html to react jsx
+
+
+Babel can be used without npm by directly using cdn link in script but we have to add type="text/babel" in app.js file.
+
+
+const list = <ul>
+                {
+                    arr.map(a=>{return a})
+                }
+            </ul>
+This is a react elelmet

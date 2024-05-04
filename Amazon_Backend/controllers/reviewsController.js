@@ -5,7 +5,6 @@ const mongoose = require('mongoose')
 
 const getReviews = async (req, res) => {
 
-
     try {
         const data = await reviewsModel.find();
         res.send({
