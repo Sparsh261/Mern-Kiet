@@ -3028,7 +3028,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","53fc6a5398fc4b1":"21dqq","b1b8b98febfa23fa":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./src/pages/homepage/homepage":"gTUEJ"}],"km3Ru":[function(require,module,exports) {
+},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","b1b8b98febfa23fa":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./src/pages/homepage/homepage":"gTUEJ","53fc6a5398fc4b1":"21dqq"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {

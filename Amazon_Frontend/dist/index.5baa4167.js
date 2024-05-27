@@ -2960,16 +2960,23 @@ const ReactDOM = require("b1b8b98febfa23fa");
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
 const App = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepageDefault.default), {}, void 0, false, {
+    return(// <Homepage/>
+    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepageDefault.default), {}, void 0, false, {
+            fileName: "app.js",
+            lineNumber: 15,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 12,
+        lineNumber: 14,
         columnNumber: 9
-    }, undefined);
+    }, undefined));
 };
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 17,
+    lineNumber: 21,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -27777,7 +27784,8 @@ const Carousel = ()=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "content"
+                className: "content",
+                children: card
             }, void 0, false, {
                 fileName: "src/pages/homepage/Carousel.js",
                 lineNumber: 26,
@@ -27832,14 +27840,10 @@ try {
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Card = ({ elem })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        style: {
-            color: "red",
-            maxWidth: "300px",
-            margin: "auto",
-            maxHeight: "300px"
-        },
+        className: "card",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                className: "card-title",
                 children: elem.title
             }, void 0, false, {
                 fileName: "src/pages/homepage/card.js",
@@ -27847,19 +27851,16 @@ const Card = ({ elem })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "card-img",
                 src: elem.images[0],
-                alt: "",
-                style: {
-                    maxHeight: "100px",
-                    maxWidth: "250px"
-                }
+                alt: ""
             }, void 0, false, {
                 fileName: "src/pages/homepage/card.js",
                 lineNumber: 24,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                class: "button",
+                className: "card-button",
                 children: "Visit page"
             }, void 0, false, {
                 fileName: "src/pages/homepage/card.js",
@@ -27867,9 +27868,9 @@ const Card = ({ elem })=>{
                 columnNumber: 17
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                class: "info",
+                className: "card-info",
                 children: [
-                    "Price: ",
+                    "Rs ",
                     elem.price
                 ]
             }, void 0, true, {
@@ -27878,7 +27879,7 @@ const Card = ({ elem })=>{
                 columnNumber: 17
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                class: "info",
+                className: "card-desc",
                 children: elem.description
             }, void 0, false, {
                 fileName: "src/pages/homepage/card.js",

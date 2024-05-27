@@ -24,8 +24,7 @@ const Carousel = () => {
 
 
             <div className="content">
-                {/* {card} */}
-                {/* {<Card elem={Data.products[0]}/>} */}
+                {card}
             </div>
 
 

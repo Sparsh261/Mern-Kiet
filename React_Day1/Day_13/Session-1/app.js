@@ -28,51 +28,51 @@ console.log("Hello world")
 
 // Adding list with react
 
-// const parent = document.getElementById('root');
-// const root = ReactDOM.createRoot(parent)  // It is the link between root of html page and the root of virtual dom of react
-
-// const heading = React.createElement('h1', {}, "Hello from React")
-// // console.log(heading)
-
-// const listitem1 = React.createElement('li', { key:'li1', 
-//                                                 className:'li1', 
-//                                                 name:"Sparsh", 
-//                                                 style:{
-//                                                         backgroundColor:'red'
-//                                                     }
-//                                             }, "Banana");
-
-// const listitem2 = React.createElement('li', {key:'li2'}, "Apple");
-
-// const list = React.createElement('ul', {}, [listitem1, listitem2]);
-
-// // root.render(heading)
-// root.render(list)
-
-
-
-
-
-
-
 const parent = document.getElementById('root');
 const root = ReactDOM.createRoot(parent)  // It is the link between root of html page and the root of virtual dom of react
-// const heading = React.createElement('h1', {}, "Hello from React")
 
-const str = "Hello from React";
+const heading = React.createElement('h1', {}, "Hello from React")
+// console.log(heading)
 
-const heading = <h1>{str}</h1>
-const l1 = <li style={{backgroundColor:"red"}} > Apple </li>
-const l2 = <li> Banana </li>
+const listitem1 = React.createElement('li', { key:'li1', 
+                                                className:'li1', 
+                                                name:"Sparsh", 
+                                                style:{
+                                                        backgroundColor:'red'
+                                                    }
+                                            }, "Banana");
 
-// const list = <ul>
-//                 {l1}{l2}
-//             </ul>
+const listitem2 = React.createElement('li', {key:'li2'}, "Apple");
 
-const arr = [l1,l2]
-const list = <ul>
-                {
-                    arr.map(a=>{return a})
-                }
-            </ul>
+const list = React.createElement('ul', {}, [listitem1, listitem2]);
+
+// root.render(heading)
 root.render(list)
+
+
+
+
+
+
+
+// const parent = document.getElementById('root');
+// const root = ReactDOM.createRoot(parent)  // It is the link between root of html page and the root of virtual dom of react
+// // const heading = React.createElement('h1', {}, "Hello from React")
+
+// const str = "Hello from React";
+
+// const heading = <h1>{str}</h1>
+// const l1 = <li style={{backgroundColor:"red"}} > Apple </li>
+// const l2 = <li> Banana </li>
+
+// // const list = <ul>
+// //                 {l1}{l2}
+// //             </ul>
+
+// const arr = [l1,l2]
+// const list = <ul>
+//                 {
+//                     arr.map(a=>{return a})
+//                 }
+//             </ul>
+// root.render(list)

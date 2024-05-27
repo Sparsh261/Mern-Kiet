@@ -81,15 +81,10 @@
 .line2{
     font-size: 1.5rem;
 }
-
-.cart{
-   
-}
 .cart i{
     font-size: 1.5rem;
 }
-.cart p{
-}
+
 
 .panel{
     background-color: grey;
@@ -144,7 +139,6 @@
 
 .content{
     background-color: lightgray;
-    height: 1000px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -152,28 +146,54 @@
     
 }
 
-.box{
-    border: 2px solid black;
-    height: 400px;
-    width: 23%;
-    margin-top: 10px;
-    padding: 5px 4px 5px 4px;
-    background-color: white;
-}
-.box-img{
-    background-size: cover;
-    height: 350px;
-    /* margin: 5px 5px 5px 5px; */
-}
-.box h2{
+.card{
+    background-color:turquoise;
+    margin: 1em;
+    padding: 1em;
+    max-width: 300px;
+    max-height: 500px;
     color: black;
-    text-align: center;
 }
-.box p{
+
+.card-img{
+    max-width: 280px;
+    max-height: 300px;
+    /* margin: auto; */
+    margin-left: 0.5em;
+    border-radius: 10px;
+}
+
+.card-title{
+    margin-bottom: 0.5em;
+    font-size: 2em;
     color: black;
-    text-align: center;
-    font-size: 25px;    
 }
+
+.card-button{
+    color: black;
+    margin: 0.4em;
+    font-size: 1em;
+    padding: 0.2em;
+    border-radius: 10px;
+}
+
+.card-info{
+    display: inline-block;
+    background-color:tan;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 0.2em;
+    margin-top: 0.4em;
+    font-size: 1.3em;
+    margin-left: 5em;
+}
+
+.card-desc{
+    color: black;
+    font-size: 1.1em;
+    margin-top: 0.4em;
+}
+
 
 .to-top{
     height: 40px;

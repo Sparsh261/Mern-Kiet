@@ -19,12 +19,12 @@
 // }
 const Card = ({elem}) => {
     return (
-        <div style={{color: 'red',  maxWidth:'300px', margin:'auto', maxHeight: '300px'}}>
-            <h4>{elem.title}</h4>
-            <img src={elem.images[0]} alt="" style={{maxHeight: '100px', maxWidth: '250px'}}/>
-                <button class="button">Visit page</button>
-                <p class="info">Price: {elem.price}</p>
-                <p class="info">{elem.description}</p>
+        <div className="card">
+            <h4 className="card-title">{elem.title}</h4>
+            <img className="card-img" src={elem.images[0]} alt="" />
+                <button className="card-button">Visit page</button>
+                <p className="card-info">Rs {elem.price}</p>
+                <p className="card-desc">{elem.description}</p>
         </div>
     )
 }
