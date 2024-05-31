@@ -38,12 +38,12 @@ const History = () => {
         //     console.log("desc cnged");
         // },[desc]);
         let d;
-        const data = async()=>{
+        const da = async()=>{
             const res = await fetch('https://dummyjson.com/products');
             d = await res.json();
             console.log(d);
         }
-        data();
+        da();
     return(
         <>
             <Navbar/>
