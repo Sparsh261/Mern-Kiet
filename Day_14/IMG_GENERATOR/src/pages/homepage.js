@@ -5,8 +5,8 @@ const HomePage = () => {
     return(
         <div> 
             <Navbar/>
-            {/* <ImageGenerator/> */}
         </div>
+
     )
 }
 

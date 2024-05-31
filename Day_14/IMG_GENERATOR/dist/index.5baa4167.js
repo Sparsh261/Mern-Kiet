@@ -2959,6 +2959,8 @@ var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 var _homepageJs = require("./src/pages/homepage.js");
 var _homepageJsDefault = parcelHelpers.interopDefault(_homepageJs);
+var _historyJs = require("./src/pages/history.js");
+var _historyJsDefault = parcelHelpers.interopDefault(_historyJs);
 var _imageGeneratorJs = require("./src/pages/imageGenerator.js");
 var _imageGeneratorJsDefault = parcelHelpers.interopDefault(_imageGeneratorJs);
 var _reactRouterDom = require("react-router-dom");
@@ -2967,7 +2969,7 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepageJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 10,
+            lineNumber: 11,
             columnNumber: 16
         }, undefined)
     },
@@ -2975,8 +2977,16 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
         path: "/generator",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 14,
+            lineNumber: 15,
             columnNumber: 18
+        }, undefined)
+    },
+    {
+        path: "/history",
+        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyJsDefault.default), {}, void 0, false, {
+            fileName: "app.js",
+            lineNumber: 19,
+            columnNumber: 16
         }, undefined)
     }
 ]);
@@ -2987,14 +2997,14 @@ const App = ()=>{
         router: router
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 22,
+        lineNumber: 27,
         columnNumber: 12
     }, undefined);
 };
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 25,
+    lineNumber: 30,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -3005,7 +3015,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/homepage.js":"bpVg1","./src/pages/imageGenerator.js":"13Wl2","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/homepage.js":"bpVg1","./src/pages/imageGenerator.js":"13Wl2","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./src/pages/history.js":"711vj"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27297,24 +27307,67 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _navbar = require("./navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _react = require("react");
+var _s = $RefreshSig$();
 const ImageGenerator = ()=>{
+    _s();
+    const [name, setName] = (0, _react.useState)("d");
+    const func = (x)=>{
+        setName(x.target.value);
+        console.log(name);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
                 fileName: "src/pages/imageGenerator.js",
-                lineNumber: 6,
+                lineNumber: 15,
                 columnNumber: 9
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Helllo"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        src: "data:image/jpeg;base64,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"
+                    }, void 0, false, {
+                        fileName: "src/pages/imageGenerator.js",
+                        lineNumber: 17,
+                        columnNumber: 17
+                    }, undefined),
+                    name,
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                children: "Enter "
+                            }, void 0, false, {
+                                fileName: "src/pages/imageGenerator.js",
+                                lineNumber: 22,
+                                columnNumber: 17
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                onChange: (e)=>{
+                                    func(e);
+                                }
+                            }, void 0, false, {
+                                fileName: "src/pages/imageGenerator.js",
+                                lineNumber: 23,
+                                columnNumber: 17
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/pages/imageGenerator.js",
+                        lineNumber: 21,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/pages/imageGenerator.js",
-                lineNumber: 7,
+                lineNumber: 16,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true);
 };
+_s(ImageGenerator, "H8hURpKjLb4AoE36XEDgQ/ZlN9I=");
 _c = ImageGenerator;
 exports.default = ImageGenerator;
 var _c;
@@ -27325,7 +27378,7 @@ $RefreshReg$(_c, "ImageGenerator");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./navbar":"4XYwF"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./navbar":"4XYwF","react":"21dqq"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27503,71 +27556,73 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
 var _navbarCss = require("./navbar.css");
 const Navbar = ()=>{
+    console.log("Rerendered");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header-parent-container",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "left",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "/",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/",
                         children: "Home"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 7,
+                        lineNumber: 11,
                         columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "/generator",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/generator",
                         children: "Image Generator"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 8,
+                        lineNumber: 12,
                         columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "/history",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/history",
                         children: "History"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 9,
+                        lineNumber: 13,
                         columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "/contact",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/contact",
                         children: "Contact Us"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 10,
+                        lineNumber: 14,
                         columnNumber: 17
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "/help",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/help",
                         children: "Help"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 11,
+                        lineNumber: 15,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/navbar.js",
-                lineNumber: 6,
+                lineNumber: 10,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "right"
             }, void 0, false, {
                 fileName: "src/pages/navbar.js",
-                lineNumber: 13,
+                lineNumber: 17,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/navbar.js",
-        lineNumber: 5,
+        lineNumber: 9,
         columnNumber: 9
     }, undefined);
 };
@@ -27581,7 +27636,7 @@ $RefreshReg$(_c, "Navbar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./navbar.css":"2uX4c","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2uX4c":[function() {},{}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./navbar.css":"2uX4c","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"2uX4c":[function() {},{}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.23.1
  *
@@ -34274,6 +34329,155 @@ function persistAppliedTransitions(_window, transitions) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequirecd17")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"711vj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a6c2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a6c2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _navbar = require("./navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _historyCss = require("./history.css");
+var _react = require("react");
+const dummyData = [
+    {
+        id: "1",
+        title: "aws"
+    },
+    {
+        id: "2",
+        title: "best"
+    },
+    {
+        id: "3",
+        title: "catch"
+    }
+];
+const chmgTitle = ()=>{
+    console.log("chngtitle");
+};
+const chmgdesc = ()=>{
+    console.log("chngdesc");
+};
+const History = ()=>{
+    // const [title,setTitle] = useState("flower");
+    // const [desc,setdesc] = useState();
+    const // useEffect(()=>{
+    //     console.log("title cnged");
+    // },[title]);
+    // useEffect(()=>{
+    //     console.log("desc cnged");
+    // },[desc]);
+    let;
+    const data = async ()=>{
+        const res = await fetch("https://dummyjson.com/products");
+        d = await res.json();
+        console.log(d);
+    };
+    data();
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
+                fileName: "src/pages/history.js",
+                lineNumber: 49,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "history-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "History"
+                    }, void 0, false, {
+                        fileName: "src/pages/history.js",
+                        lineNumber: 51,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                onChange: (e)=>{
+                                    setTitle(e.target.value);
+                                },
+                                value: title
+                            }, void 0, false, {
+                                fileName: "src/pages/history.js",
+                                lineNumber: 56,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "src/pages/history.js",
+                                lineNumber: 56,
+                                columnNumber: 94
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                onChange: (e)=>{
+                                    setdesc(e.target.value);
+                                }
+                            }, void 0, false, {
+                                fileName: "src/pages/history.js",
+                                lineNumber: 57,
+                                columnNumber: 21
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/pages/history.js",
+                        lineNumber: 52,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "his1",
+                        children: d.map((elem)=>{
+                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                        children: elem.id
+                                    }, void 0, false, {
+                                        fileName: "src/pages/history.js",
+                                        lineNumber: 65,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: elem.title
+                                    }, void 0, false, {
+                                        fileName: "src/pages/history.js",
+                                        lineNumber: 67,
+                                        columnNumber: 33
+                                    }, undefined)
+                                ]
+                            }, elem.id, true, {
+                                fileName: "src/pages/history.js",
+                                lineNumber: 64,
+                                columnNumber: 29
+                            }, undefined);
+                        })
+                    }, void 0, false, {
+                        fileName: "src/pages/history.js",
+                        lineNumber: 61,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/pages/history.js",
+                lineNumber: 50,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_c = History;
+exports.default = History;
+var _c;
+$RefreshReg$(_c, "History");
+
+  $parcel$ReactRefreshHelpers$a6c2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./navbar":"4XYwF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./history.css":"jWgFB","react":"21dqq"}],"jWgFB":[function() {},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequirecd17")
 
 //# sourceMappingURL=index.5baa4167.js.map

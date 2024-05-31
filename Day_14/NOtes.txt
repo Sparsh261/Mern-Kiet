@@ -1,0 +1,21 @@
+optional chaining
+
+date:{
+    day:"Mon",
+    date:"12-21-12"
+}
+
+date?.date  --> optional chaining
+
+
+
+
+Two way data binding --->  if chng in input field changes but if field changes input also changes
+
+
+setEffect can be used in 4 ways:-
+
+no dependency array --> runs on evertything changesd
+empty array --> only once when page refreshes
+one value in array --> when that value changes
+more than 1 value --> when any value changes
