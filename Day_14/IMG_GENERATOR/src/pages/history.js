@@ -1,4 +1,5 @@
 import Navbar from "./navbar";
+import Card from "./card";
 import "./history.css"
 import { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -44,7 +45,7 @@ const History = () => {
 
     return(
         <>
-            <Navbar/>
+            <Navbar page={'history'}/>
             <div className="history-container">
                 <h1>History</h1>
                 <div>
@@ -53,26 +54,17 @@ const History = () => {
                         dataQuery.map((elem)=>{
                             return(
                                 <div key={elem.id}> 
-                                <h2>{elem.title}</h2>
-                                <p>{elem.description}</p>
-                                <img src={elem.images[0]}></img>
-                                <Link to={`/history/${elem.id}`} >more</Link>
+                                 {/* <h2>{elem.title}</h2>
+                                 <p>{elem.description}</p>
+                                 <img src={elem.images[0]}></img>
+                                 <Link to={`/history/${elem.id}`} >more</Link> */}
+                                <Card elem={elem}/>
                             </div>
                             )
                         })
                     }
                 </div>
-                <div className="his1">
-                    {data.map(elem=>{
-                        return(
-                            <div key={elem.id}> 
-                                <h2>{elem.title}</h2>
-                                {/* <h2>{...id,rest}</h2> */}
-                                <p>{elem.description}</p><br></br>
-                            </div>
-                        )
-                    })}
-                </div>
+                
             </div>
         </>
     )
