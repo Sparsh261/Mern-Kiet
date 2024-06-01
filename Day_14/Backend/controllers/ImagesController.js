@@ -1,139 +1,40 @@
-const productModel = require('../models/productsModel.js');
-
-const getAllProducts = async (req, res) => {
-    const {sort='price',page=1,pageSize=100,fields="-info",...q} = req.query;
-    try {
-
-        let query = productModel.find();
-        
-        if(q){
-             query = productModel.find(q);
-        }
-
-        query  = query.sort(sort.split(',').join(' '));
-
-        const skip = pageSize * (page-1);
-        const  limit = pageSize;
-        query = query.skip(skip).limit(limit);
-
-        query = query.select(fields.split(',').join(' '));
-
-        const data = await query.populate({path:"review",model:"Reviews"})
-        .then((result)=>{return result}).catch((err)=>console.log(err));
-;
-
-        const totalResults = await productModel.countDocuments()
-
-        res.send({
-            status: "success",
-            results: data.length,
-            totalResults: totalResults,
-            pageSize: pageSize,
-            page: page,
-            data: {
-                product: data
-            }
-        })
-    }
-    catch (err) {
-        console.log(err);
-        res.send({
-            status: "fail",
-            data: {
-                error: err
-            }
-        })
-    }
-}
-
-const addProducts = async (req, res) => {
-
-    try {
-        const {_id,...reqBody} = req.body
-        const data = await productModel.create(reqBody)
-        res.json({
-            status: "success",
-            results: 1,
-            ans: {
-                products: data
-            }
-        })
-    }
-    catch (err) {
-        res.status(403);
-        res.json({
-            status: "fail",
-            // message: JSON.stringify(err)
-            message: err.message
-        })
-    }
-}
-
-const replaceProduct = async(req,res)=>{
+const generateImageController = async(req,res)=>{
+    const body = req.body;
+    const text = body.text;
+    let url;
     try{
-        const reqId = req.params.id;
-        const data = {...req.body};
-        const ans = await productModel.findOneAndReplace( { _id : reqId } , data );
-
-        res.json({
-            status:"success",
-            results:1,
-            message:"Changed"
-        })
+        const res = await fetch("https://api.hotpot.ai/art-maker-sdte-zmjbcrr", {
+            "headers": {
+              "accept": "*/*",
+              "accept-language": "en-US,en;q=0.9",
+              "api-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MTcyMzE5NzEsImV4cCI6MTcxNzMxODM3MX0.719OuMWrEayMlijY48oTP16DE0Zt9n45LAoR29p6Y1Y",
+              "authorization": "hotpot-t2mJbCr8292aQzp8CnEPaK",
+              "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryCJfH1fmfNa9pq9tF",
+              "sec-ch-ua": "\"Google Chrome\";v=\"125\", \"Chromium\";v=\"125\", \"Not.A/Brand\";v=\"24\"",
+              "sec-ch-ua-mobile": "?0",
+              "sec-ch-ua-platform": "\"Windows\"",
+              "sec-fetch-dest": "empty",
+              "sec-fetch-mode": "cors",
+              "sec-fetch-site": "same-site"
+            },
+            "referrer": "https://hotpot.ai/",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "body": `------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"seedValue\"\r\n\r\nnull\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"inputText\"\r\n\r\n${text}\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"width\"\r\n\r\n512\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"height\"\r\n\r\n512\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"styleId\"\r\n\r\n49\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"styleLabel\"\r\n\r\nPhoto General 1\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"isPrivate\"\r\n\r\nfalse\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"price\"\r\n\r\n0\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"requestId\"\r\n\r\n8-hDinFWp5UbYPvAX\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF\r\nContent-Disposition: form-data; name=\"resultUrl\"\r\n\r\nhttps://hotpotmedia.s3.us-east-2.amazonaws.com/8-hDinFWp5UbYPvAX.png\r\n------WebKitFormBoundaryCJfH1fmfNa9pq9tF--\r\n`,
+            "method": "POST",
+            "mode": "cors",
+            "credentials": "include"
+          });
+          url = await res.json()
+          console.log(url)
+    }catch(err){
+        console.log(err)
     }
-    catch(err){
-        res.json({
-            status:"failes",
-            message:err
-        })
-    }
-}
-
-const updateProducts = async(req,res)=>{
-    try{
-        const {_id,...data} = req.body
-    const ans = await productModel.findOneAndUpdate( {_id : req.params.id} , data);
     res.json({
         status:"success",
-        results:1,
-        message:ans
+        data:{
+            url:url
+        }
     })
-    }
-    catch(err){
-        res.json({
-            status:"failed",
-            results:1,
-            message:err
-        })
-    }
 }
 
-const deleteProducts = async(req,res)=>{
-
-    try{
-        const ans = await productModel.deleteMany(
-                            {"title":req.params.title} ||  {"price":req.params.id, "title":req.params.title});
-                            res.json({
-                                status:"success",
-                                results:1,
-                                message:ans
-                            })
-    }
-    catch(err){
-        res.json({
-            status:"failed",
-            results:1,
-            message:err
-        })
-    }
-}
-
-
-
-module.exports = {
-    getAllProducts,
-    addProducts,
-    replaceProduct,
-    updateProducts,
-    deleteProducts
-}
+module.exports = {generateImageController}

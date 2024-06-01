@@ -27327,10 +27327,21 @@ const ImageGenerator = ()=>{
     const [src, setSrc] = (0, _react.useState)();
     const func = (x)=>{
         setName(x.target.value);
-        console.log(name);
+    // console.log(name);
     };
-    const handleClick = ()=>{
-        setSrc(`https://source.unsplash.com/random/400x400/?${name}`);
+    const handleClick = async ()=>{
+        const res = await fetch("http://localhost:1400/api/images", {
+            method: "POST",
+            body: JSON.stringify({
+                text: name
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        // console.log(res)
+        const data = await res.json();
+        if (data?.status === "success") setSrc(data.data.url);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -27338,7 +27349,7 @@ const ImageGenerator = ()=>{
                 page: "imageGenerator"
             }, void 0, false, {
                 fileName: "src/pages/imageGenerator.js",
-                lineNumber: 22,
+                lineNumber: 35,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27348,7 +27359,7 @@ const ImageGenerator = ()=>{
                         src: src
                     }, void 0, false, {
                         fileName: "src/pages/imageGenerator.js",
-                        lineNumber: 26,
+                        lineNumber: 39,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27357,7 +27368,7 @@ const ImageGenerator = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/pages/imageGenerator.js",
-                        lineNumber: 27,
+                        lineNumber: 40,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27365,13 +27376,13 @@ const ImageGenerator = ()=>{
                         children: "generate "
                     }, void 0, false, {
                         fileName: "src/pages/imageGenerator.js",
-                        lineNumber: 28,
+                        lineNumber: 41,
                         columnNumber: 21
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/imageGenerator.js",
-                lineNumber: 23,
+                lineNumber: 36,
                 columnNumber: 13
             }, undefined)
         ]
