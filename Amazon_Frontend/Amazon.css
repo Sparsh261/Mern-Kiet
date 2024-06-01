@@ -61,6 +61,7 @@
 .nav-search-bar input{
     /* border-top-right-radius: 5%;
     border-bottom-right-radius: 5%; */
+    color: black;
     width: 100%;
     border: none;
 }

@@ -1,6 +1,7 @@
 import Navbar from "./navbar";
 import "./history.css"
 import { useState , useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const dummyData = [
     {
@@ -25,46 +26,49 @@ const chmgdesc = ()=>{
 } 
 
 const History = () => {
-        // const [title,setTitle] = useState("flower");
-        // const [desc,setdesc] = useState();
+        const [query,setQuery] = useState("");
+        const [data,setData] = useState([]);
+        const [dataQuery,setDataQuery] = useState([]);
 
-        const [data,setData] = useState([{'id':'1'}]);
+        const getQuery = async() => {
 
-        // useEffect(()=>{
-        //     console.log("title cnged");
-        // },[title]);
-
-        // useEffect(()=>{
-        //     console.log("desc cnged");
-        // },[desc]);
-        let d;
-        const da = async()=>{
-            const res = await fetch('https://dummyjson.com/products');
-            d = await res.json();
+            const res = await fetch(`https://dummyjson.com/products/search?q=${query}`);
+            let d = await res.json();
+            setDataQuery(d.products);
             console.log(d);
         }
-        da();
+
+        useEffect(()=>{
+            getQuery();
+        },[query])
+
     return(
         <>
             <Navbar/>
             <div className="history-container">
                 <h1>History</h1>
                 <div>
-                    {/* <button onClick={chmgTitle}>Change title</button>
-                    <button onClick={()=>{chmgTitle();chmgdesc()}} >Change title & desc</button>
-                    <button onClick={chmgdesc}>Change desc</button> */}
-                    <input onChange={(e)=>{setTitle(e.target.value)}} value={title} ></input><br/>
-                    <input onChange={(e)=>{setdesc(e.target.value)}}></input>
-                    {/* {title}<br></br>
-                    {desc} */}
+                    <input onChange={(e)=>{setQuery(e.target.value);}} value={query} ></input><br/>
+                    {
+                        dataQuery.map((elem)=>{
+                            return(
+                                <div key={elem.id}> 
+                                <h2>{elem.title}</h2>
+                                <p>{elem.description}</p>
+                                <img src={elem.images[0]}></img>
+                                <Link to={`/history/${elem.id}`} >more</Link>
+                            </div>
+                            )
+                        })
+                    }
                 </div>
                 <div className="his1">
-                    {d.map(elem=>{
+                    {data.map(elem=>{
                         return(
                             <div key={elem.id}> 
-                                <h2>{elem.id}</h2>
+                                <h2>{elem.title}</h2>
                                 {/* <h2>{...id,rest}</h2> */}
-                                <p>{elem.title}</p>
+                                <p>{elem.description}</p><br></br>
                             </div>
                         )
                     })}

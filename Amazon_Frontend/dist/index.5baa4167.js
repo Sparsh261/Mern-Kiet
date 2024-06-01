@@ -27298,7 +27298,39 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _carousel = require("./Carousel");
+var _carouselDefault = parcelHelpers.interopDefault(_carousel);
+var _s = $RefreshSig$();
 const Navbar = ()=>{
+    _s();
+    let [toSearch, settoSearch] = (0, _react.useState)("");
+    const getData = async ()=>{
+        const shorturl = await fetch(`http://localhost:1400/products?title=${toSearch}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((res)=>res.json()).then((r)=>{
+            // setData(r.data.product);
+            console.log(r);
+        }).catch((err)=>console.log(err));
+    };
+    (0, _react.useEffect)(()=>{
+        // if (toSearch) {
+        // getData();
+        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {
+            toSearch: toSearch
+        }, void 0, false, {
+            fileName: "src/pages/homepage/Navbar.js",
+            lineNumber: 33,
+            columnNumber: 13
+        }, undefined);
+        console.log(toSearch.length);
+    // }
+    }, [
+        toSearch
+    ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         class: "navbar ",
         children: [
@@ -27308,12 +27340,12 @@ const Navbar = ()=>{
                     class: "logo"
                 }, void 0, false, {
                     fileName: "src/pages/homepage/Navbar.js",
-                    lineNumber: 5,
+                    lineNumber: 42,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 4,
+                lineNumber: 41,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27324,14 +27356,14 @@ const Navbar = ()=>{
                         children: "Deliver to"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 11,
+                        lineNumber: 48,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                         class: "fa-solid fa-location-dot"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 12,
+                        lineNumber: 49,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27339,13 +27371,13 @@ const Navbar = ()=>{
                         children: "India"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 13,
+                        lineNumber: 50,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 10,
+                lineNumber: 47,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27356,40 +27388,59 @@ const Navbar = ()=>{
                             children: "All "
                         }, void 0, false, {
                             fileName: "src/pages/homepage/Navbar.js",
-                            lineNumber: 18,
+                            lineNumber: 55,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 17,
+                        lineNumber: 54,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "text",
-                        placeholder: "Search Amazon"
+                        placeholder: "Search Amazon",
+                        value: toSearch,
+                        onChange: (e)=>{
+                            settoSearch(e.target.value);
+                        }
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 20,
+                        lineNumber: 57,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         class: "search-bar-logo",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                            class: "fa-solid fa-magnifying-glass"
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            onClick: ()=>{
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {
+                                    toSearch: toSearch
+                                }, void 0, false, {
+                                    fileName: "src/pages/homepage/Navbar.js",
+                                    lineNumber: 60,
+                                    columnNumber: 43
+                                }, void 0);
+                            },
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                class: "fa-solid fa-magnifying-glass"
+                            }, void 0, false, {
+                                fileName: "src/pages/homepage/Navbar.js",
+                                lineNumber: 61,
+                                columnNumber: 25
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/pages/homepage/Navbar.js",
-                            lineNumber: 22,
-                            columnNumber: 25
+                            lineNumber: 60,
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 21,
-                        columnNumber: 21
+                        lineNumber: 59,
+                        columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 16,
+                lineNumber: 53,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27400,7 +27451,7 @@ const Navbar = ()=>{
                         children: "Hello,Sign in"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 27,
+                        lineNumber: 67,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27408,13 +27459,13 @@ const Navbar = ()=>{
                         children: "Accounts & Requests"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 28,
+                        lineNumber: 68,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 26,
+                lineNumber: 66,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27425,7 +27476,7 @@ const Navbar = ()=>{
                         children: "Returns"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 32,
+                        lineNumber: 72,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27433,13 +27484,13 @@ const Navbar = ()=>{
                         children: "& orders"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 33,
+                        lineNumber: 73,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 31,
+                lineNumber: 71,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27449,23 +27500,24 @@ const Navbar = ()=>{
                         class: "fa-solid fa-cart-shopping"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 37,
+                        lineNumber: 77,
                         columnNumber: 17
                     }, undefined),
                     "Cart"
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 36,
+                lineNumber: 76,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/homepage/Navbar.js",
-        lineNumber: 3,
+        lineNumber: 40,
         columnNumber: 9
     }, undefined);
 };
+_s(Navbar, "PaxQ5pc3eknXMWdfZzYKDuTt8Wc=");
 _c = Navbar;
 exports.default = Navbar;
 var _c;
@@ -27476,7 +27528,7 @@ $RefreshReg$(_c, "Navbar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","./Carousel":"8Ro6d"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27644,7 +27696,208 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"ieYIs":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"8Ro6d":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a099 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a099.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _card = require("./card");
+var _cardDefault = parcelHelpers.interopDefault(_card);
+var _react = require("react");
+var _s = $RefreshSig$();
+const Carousel = ({ toSearch })=>{
+    _s();
+    const [data, setData] = (0, _react.useState)([]);
+    const [query, setQuery] = (0, _react.useState)("");
+    const getData = async ()=>{
+        console.log(toSearch);
+        if (toSearch) setQuery(toSearch);
+        if (query.length > 0) {
+            console.log(toSearch + "by");
+            const shorturl = await fetch(`http://localhost:1400/products?title=${query}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then((res)=>res.json()).then((r)=>{
+                setData(r.data.product);
+            }).catch((err)=>console.log(err));
+            console.log(data);
+        } else {
+            console.log(toSearch + "hi");
+            const shorturl = await fetch("http://localhost:1400/products", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then((res)=>res.json()).then((r)=>{
+                setData(r.data.product);
+            }).catch((err)=>console.log(err));
+        // console.log(data);
+        }
+    };
+    (0, _react.useEffect)(()=>{
+        getData();
+    }, [
+        query,
+        toSearch
+    ]);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "hero-image",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "hero-words",
+                    children: "You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. Click here to go to amazon.in"
+                }, void 0, false, {
+                    fileName: "src/pages/homepage/Carousel.js",
+                    lineNumber: 50,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/pages/homepage/Carousel.js",
+                lineNumber: 49,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "content",
+                children: data.map((elem)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
+                            elem: elem
+                        }, void 0, false, {
+                            fileName: "src/pages/homepage/Carousel.js",
+                            lineNumber: 60,
+                            columnNumber: 29
+                        }, undefined)
+                    }, elem.id_, false, {
+                        fileName: "src/pages/homepage/Carousel.js",
+                        lineNumber: 59,
+                        columnNumber: 25
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/pages/homepage/Carousel.js",
+                lineNumber: 56,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/pages/homepage/Carousel.js",
+        lineNumber: 48,
+        columnNumber: 9
+    }, undefined);
+};
+_s(Carousel, "gVP2AkICvfumelkruAKKwuQ2yZw=");
+_c = Carousel;
+exports.default = Carousel;
+var _c;
+$RefreshReg$(_c, "Carousel");
+
+  $parcel$ReactRefreshHelpers$a099.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./card":"iXUvL","react":"21dqq"}],"iXUvL":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c3bd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c3bd.prelude(module);
+
+try {
+// const elem = {
+//     "id": 1,
+//     "title": "iPhone 9",
+//     "description": "An apple mobile which is nothing like apple",
+//     "price": 549,
+//     "discountPercentage": 12.96,
+//     "rating": 4.69,
+//     "stock": 94,
+//     "brand": "Apple",
+//     "category": "smartphones",
+//     "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+//     "images": [
+//         "https://cdn.dummyjson.com/product-images/1/1.jpg",
+//         "https://cdn.dummyjson.com/product-images/1/2.jpg",
+//         "https://cdn.dummyjson.com/product-images/1/3.jpg",
+//         "https://cdn.dummyjson.com/product-images/1/4.jpg",
+//         "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+//     ]
+// }
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Card = ({ elem })=>{
+    // console.log(1)
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                className: "card-title",
+                children: elem.title
+            }, void 0, false, {
+                fileName: "src/pages/homepage/card.js",
+                lineNumber: 24,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "card-img",
+                src: elem?.images[1],
+                alt: ""
+            }, void 0, false, {
+                fileName: "src/pages/homepage/card.js",
+                lineNumber: 25,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "card-button",
+                children: "Visit page"
+            }, void 0, false, {
+                fileName: "src/pages/homepage/card.js",
+                lineNumber: 26,
+                columnNumber: 17
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "card-info",
+                children: [
+                    "Rs ",
+                    elem.price
+                ]
+            }, void 0, true, {
+                fileName: "src/pages/homepage/card.js",
+                lineNumber: 27,
+                columnNumber: 17
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "card-desc",
+                children: elem.description
+            }, void 0, false, {
+                fileName: "src/pages/homepage/card.js",
+                lineNumber: 28,
+                columnNumber: 17
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/pages/homepage/card.js",
+        lineNumber: 23,
+        columnNumber: 9
+    }, undefined);
+};
+_c = Card;
+module.exports = Card;
+var _c;
+$RefreshReg$(_c, "Card");
+
+  $parcel$ReactRefreshHelpers$c3bd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ieYIs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c8c0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27741,169 +27994,7 @@ $RefreshReg$(_c, "Categoryrow");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8Ro6d":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a099 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$a099.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _dataJson = require("../../../data.json");
-var _dataJsonDefault = parcelHelpers.interopDefault(_dataJson);
-var _card = require("./card");
-var _cardDefault = parcelHelpers.interopDefault(_card);
-const Carousel = ()=>{
-    const card = (0, _dataJsonDefault.default).products.map((elem)=>{
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
-            elem: elem
-        }, void 0, false, {
-            fileName: "src/pages/homepage/Carousel.js",
-            lineNumber: 9,
-            columnNumber: 13
-        }, undefined);
-    });
-    // console.log(Data.products[0])
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "hero-image",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "hero-words",
-                    children: "You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. Click here to go to amazon.in"
-                }, void 0, false, {
-                    fileName: "src/pages/homepage/Carousel.js",
-                    lineNumber: 19,
-                    columnNumber: 17
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/pages/homepage/Carousel.js",
-                lineNumber: 18,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "content",
-                children: card
-            }, void 0, false, {
-                fileName: "src/pages/homepage/Carousel.js",
-                lineNumber: 26,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/pages/homepage/Carousel.js",
-        lineNumber: 17,
-        columnNumber: 9
-    }, undefined);
-};
-_c = Carousel;
-exports.default = Carousel;
-var _c;
-$RefreshReg$(_c, "Carousel");
-
-  $parcel$ReactRefreshHelpers$a099.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../../data.json":"cn6Iz","./card":"iXUvL"}],"cn6Iz":[function(require,module,exports) {
-module.exports = JSON.parse('{"products":[{"id":1,"title":"iPhone 9","description":"An apple mobile which is nothing like apple","price":549,"discountPercentage":12.96,"rating":4.69,"stock":94,"brand":"Apple","category":"smartphones","thumbnail":"https://cdn.dummyjson.com/product-images/1/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/1/1.jpg","https://cdn.dummyjson.com/product-images/1/2.jpg","https://cdn.dummyjson.com/product-images/1/3.jpg","https://cdn.dummyjson.com/product-images/1/4.jpg","https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"]},{"id":2,"title":"iPhone X","description":"SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...","price":899,"discountPercentage":17.94,"rating":4.44,"stock":34,"brand":"Apple","category":"smartphones","thumbnail":"https://cdn.dummyjson.com/product-images/2/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/2/1.jpg","https://cdn.dummyjson.com/product-images/2/2.jpg","https://cdn.dummyjson.com/product-images/2/3.jpg","https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"]},{"id":3,"title":"Samsung Universe 9","description":"Samsung\'s new variant which goes beyond Galaxy to the Universe","price":1249,"discountPercentage":15.46,"rating":4.09,"stock":36,"brand":"Samsung","category":"smartphones","thumbnail":"https://cdn.dummyjson.com/product-images/3/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/3/1.jpg"]},{"id":4,"title":"OPPOF19","description":"OPPO F19 is officially announced on April 2021.","price":280,"discountPercentage":17.91,"rating":4.3,"stock":123,"brand":"OPPO","category":"smartphones","thumbnail":"https://cdn.dummyjson.com/product-images/4/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/4/1.jpg","https://cdn.dummyjson.com/product-images/4/2.jpg","https://cdn.dummyjson.com/product-images/4/3.jpg","https://cdn.dummyjson.com/product-images/4/4.jpg","https://cdn.dummyjson.com/product-images/4/thumbnail.jpg"]},{"id":5,"title":"Huawei P30","description":"Huawei\u2019s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.","price":499,"discountPercentage":10.58,"rating":4.09,"stock":32,"brand":"Huawei","category":"smartphones","thumbnail":"https://cdn.dummyjson.com/product-images/5/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/5/1.jpg","https://cdn.dummyjson.com/product-images/5/2.jpg","https://cdn.dummyjson.com/product-images/5/3.jpg"]},{"id":6,"title":"MacBook Pro","description":"MacBook Pro 2021 with mini-LED display may launch between September, November","price":1749,"discountPercentage":11.02,"rating":4.57,"stock":83,"brand":"Apple","category":"laptops","thumbnail":"https://cdn.dummyjson.com/product-images/6/thumbnail.png","images":["https://cdn.dummyjson.com/product-images/6/1.png","https://cdn.dummyjson.com/product-images/6/2.jpg","https://cdn.dummyjson.com/product-images/6/3.png","https://cdn.dummyjson.com/product-images/6/4.jpg"]},{"id":7,"title":"Samsung Galaxy Book","description":"Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched","price":1499,"discountPercentage":4.15,"rating":4.25,"stock":50,"brand":"Samsung","category":"laptops","thumbnail":"https://cdn.dummyjson.com/product-images/7/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/7/1.jpg","https://cdn.dummyjson.com/product-images/7/2.jpg","https://cdn.dummyjson.com/product-images/7/3.jpg","https://cdn.dummyjson.com/product-images/7/thumbnail.jpg"]},{"id":8,"title":"Microsoft Surface Laptop 4","description":"Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.","price":1499,"discountPercentage":10.23,"rating":4.43,"stock":68,"brand":"Microsoft Surface","category":"laptops","thumbnail":"https://cdn.dummyjson.com/product-images/8/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/8/1.jpg","https://cdn.dummyjson.com/product-images/8/2.jpg","https://cdn.dummyjson.com/product-images/8/3.jpg","https://cdn.dummyjson.com/product-images/8/4.jpg","https://cdn.dummyjson.com/product-images/8/thumbnail.jpg"]},{"id":9,"title":"Infinix INBOOK","description":"Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey \u2013 1 Year Warranty","price":1099,"discountPercentage":11.83,"rating":4.54,"stock":96,"brand":"Infinix","category":"laptops","thumbnail":"https://cdn.dummyjson.com/product-images/9/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/9/1.jpg","https://cdn.dummyjson.com/product-images/9/2.png","https://cdn.dummyjson.com/product-images/9/3.png","https://cdn.dummyjson.com/product-images/9/4.jpg","https://cdn.dummyjson.com/product-images/9/thumbnail.jpg"]},{"id":10,"title":"HP Pavilion 15-DK1056WM","description":"HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10","price":1099,"discountPercentage":6.18,"rating":4.43,"stock":89,"brand":"HP Pavilion","category":"laptops","thumbnail":"https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg","images":["https://cdn.dummyjson.com/product-images/10/1.jpg","https://cdn.dummyjson.com/product-images/10/2.jpg","https://cdn.dummyjson.com/product-images/10/3.jpg","https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg"]},{"id":11,"title":"perfume Oil","description":"Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil","price":13,"discountPercentage":8.4,"rating":4.26,"stock":65,"brand":"Impression of Acqua Di Gio","category":"fragrances","thumbnail":"https://cdn.dummyjson.com/product-images/11/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/11/1.jpg","https://cdn.dummyjson.com/product-images/11/2.jpg","https://cdn.dummyjson.com/product-images/11/3.jpg","https://cdn.dummyjson.com/product-images/11/thumbnail.jpg"]},{"id":12,"title":"Brown Perfume","description":"Royal_Mirage Sport Brown Perfume for Men & Women - 120ml","price":40,"discountPercentage":15.66,"rating":4,"stock":52,"brand":"Royal_Mirage","category":"fragrances","thumbnail":"https://cdn.dummyjson.com/product-images/12/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/12/1.jpg","https://cdn.dummyjson.com/product-images/12/2.jpg","https://cdn.dummyjson.com/product-images/12/3.png","https://cdn.dummyjson.com/product-images/12/4.jpg","https://cdn.dummyjson.com/product-images/12/thumbnail.jpg"]},{"id":13,"title":"Fog Scent Xpressio Perfume","description":"Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men","price":13,"discountPercentage":8.14,"rating":4.59,"stock":61,"brand":"Fog Scent Xpressio","category":"fragrances","thumbnail":"https://cdn.dummyjson.com/product-images/13/thumbnail.webp","images":["https://cdn.dummyjson.com/product-images/13/1.jpg","https://cdn.dummyjson.com/product-images/13/2.png","https://cdn.dummyjson.com/product-images/13/3.jpg","https://cdn.dummyjson.com/product-images/13/4.jpg","https://cdn.dummyjson.com/product-images/13/thumbnail.webp"]},{"id":14,"title":"Non-Alcoholic Concentrated Perfume Oil","description":"Original Al Munakh\xae by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil","price":120,"discountPercentage":15.6,"rating":4.21,"stock":114,"brand":"Al Munakh","category":"fragrances","thumbnail":"https://cdn.dummyjson.com/product-images/14/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/14/1.jpg","https://cdn.dummyjson.com/product-images/14/2.jpg","https://cdn.dummyjson.com/product-images/14/3.jpg","https://cdn.dummyjson.com/product-images/14/thumbnail.jpg"]},{"id":15,"title":"Eau De Perfume Spray","description":"Genuine  Al-Rehab spray perfume from UAE/Saudi Arabia/Yemen High Quality","price":30,"discountPercentage":10.99,"rating":4.7,"stock":105,"brand":"Lord - Al-Rehab","category":"fragrances","thumbnail":"https://cdn.dummyjson.com/product-images/15/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/15/1.jpg","https://cdn.dummyjson.com/product-images/15/2.jpg","https://cdn.dummyjson.com/product-images/15/3.jpg","https://cdn.dummyjson.com/product-images/15/4.jpg","https://cdn.dummyjson.com/product-images/15/thumbnail.jpg"]},{"id":16,"title":"Hyaluronic Acid Serum","description":"L\'Or\xc3\xa9al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid","price":19,"discountPercentage":13.31,"rating":4.83,"stock":110,"brand":"L\'Oreal Paris","category":"skincare","thumbnail":"https://cdn.dummyjson.com/product-images/16/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/16/1.png","https://cdn.dummyjson.com/product-images/16/2.webp","https://cdn.dummyjson.com/product-images/16/3.jpg","https://cdn.dummyjson.com/product-images/16/4.jpg","https://cdn.dummyjson.com/product-images/16/thumbnail.jpg"]},{"id":17,"title":"Tree Oil 30ml","description":"Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,","price":12,"discountPercentage":4.09,"rating":4.52,"stock":78,"brand":"Hemani Tea","category":"skincare","thumbnail":"https://cdn.dummyjson.com/product-images/17/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/17/1.jpg","https://cdn.dummyjson.com/product-images/17/2.jpg","https://cdn.dummyjson.com/product-images/17/3.jpg","https://cdn.dummyjson.com/product-images/17/thumbnail.jpg"]},{"id":18,"title":"Oil Free Moisturizer 100ml","description":"Dermive Oil Free Moisturizer with SPF 20 is specifically formulated with ceramides, hyaluronic acid & sunscreen.","price":40,"discountPercentage":13.1,"rating":4.56,"stock":88,"brand":"Dermive","category":"skincare","thumbnail":"https://cdn.dummyjson.com/product-images/18/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/18/1.jpg","https://cdn.dummyjson.com/product-images/18/2.jpg","https://cdn.dummyjson.com/product-images/18/3.jpg","https://cdn.dummyjson.com/product-images/18/4.jpg","https://cdn.dummyjson.com/product-images/18/thumbnail.jpg"]},{"id":19,"title":"Skin Beauty Serum.","description":"Product name: rorec collagen hyaluronic acid white face serum riceNet weight: 15 m","price":46,"discountPercentage":10.68,"rating":4.42,"stock":54,"brand":"ROREC White Rice","category":"skincare","thumbnail":"https://cdn.dummyjson.com/product-images/19/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/19/1.jpg","https://cdn.dummyjson.com/product-images/19/2.jpg","https://cdn.dummyjson.com/product-images/19/3.png","https://cdn.dummyjson.com/product-images/19/thumbnail.jpg"]},{"id":20,"title":"Freckle Treatment Cream- 15gm","description":"Fair & Clear is Pakistan\'s only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.","price":70,"discountPercentage":16.99,"rating":4.06,"stock":140,"brand":"Fair & Clear","category":"skincare","thumbnail":"https://cdn.dummyjson.com/product-images/20/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/20/1.jpg","https://cdn.dummyjson.com/product-images/20/2.jpg","https://cdn.dummyjson.com/product-images/20/3.jpg","https://cdn.dummyjson.com/product-images/20/4.jpg","https://cdn.dummyjson.com/product-images/20/thumbnail.jpg"]},{"id":21,"title":"- Daal Masoor 500 grams","description":"Fine quality Branded Product Keep in a cool and dry place","price":20,"discountPercentage":4.81,"rating":4.44,"stock":133,"brand":"Saaf & Khaas","category":"groceries","thumbnail":"https://cdn.dummyjson.com/product-images/21/thumbnail.png","images":["https://cdn.dummyjson.com/product-images/21/1.png","https://cdn.dummyjson.com/product-images/21/2.jpg","https://cdn.dummyjson.com/product-images/21/3.jpg"]},{"id":22,"title":"Elbow Macaroni - 400 gm","description":"Product details of Bake Parlor Big Elbow Macaroni - 400 gm","price":14,"discountPercentage":15.58,"rating":4.57,"stock":146,"brand":"Bake Parlor Big","category":"groceries","thumbnail":"https://cdn.dummyjson.com/product-images/22/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/22/1.jpg","https://cdn.dummyjson.com/product-images/22/2.jpg","https://cdn.dummyjson.com/product-images/22/3.jpg"]},{"id":23,"title":"Orange Essence Food Flavou","description":"Specifications of Orange Essence Food Flavour For Cakes and Baking Food Item","price":14,"discountPercentage":8.04,"rating":4.85,"stock":26,"brand":"Baking Food Items","category":"groceries","thumbnail":"https://cdn.dummyjson.com/product-images/23/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/23/1.jpg","https://cdn.dummyjson.com/product-images/23/2.jpg","https://cdn.dummyjson.com/product-images/23/3.jpg","https://cdn.dummyjson.com/product-images/23/4.jpg","https://cdn.dummyjson.com/product-images/23/thumbnail.jpg"]},{"id":24,"title":"cereals muesli fruit nuts","description":"original fauji cereal muesli 250gm box pack original fauji cereals muesli fruit nuts flakes breakfast cereal break fast faujicereals cerels cerel foji fouji","price":46,"discountPercentage":16.8,"rating":4.94,"stock":113,"brand":"fauji","category":"groceries","thumbnail":"https://cdn.dummyjson.com/product-images/24/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/24/1.jpg","https://cdn.dummyjson.com/product-images/24/2.jpg","https://cdn.dummyjson.com/product-images/24/3.jpg","https://cdn.dummyjson.com/product-images/24/4.jpg","https://cdn.dummyjson.com/product-images/24/thumbnail.jpg"]},{"id":25,"title":"Gulab Powder 50 Gram","description":"Dry Rose Flower Powder Gulab Powder 50 Gram \u2022 Treats Wounds","price":70,"discountPercentage":13.58,"rating":4.87,"stock":47,"brand":"Dry Rose","category":"groceries","thumbnail":"https://cdn.dummyjson.com/product-images/25/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/25/1.png","https://cdn.dummyjson.com/product-images/25/2.jpg","https://cdn.dummyjson.com/product-images/25/3.png","https://cdn.dummyjson.com/product-images/25/4.jpg","https://cdn.dummyjson.com/product-images/25/thumbnail.jpg"]},{"id":26,"title":"Plant Hanger For Home","description":"Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf","price":41,"discountPercentage":17.86,"rating":4.08,"stock":131,"brand":"Boho Decor","category":"home-decoration","thumbnail":"https://cdn.dummyjson.com/product-images/26/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/26/1.jpg","https://cdn.dummyjson.com/product-images/26/2.jpg","https://cdn.dummyjson.com/product-images/26/3.jpg","https://cdn.dummyjson.com/product-images/26/4.jpg","https://cdn.dummyjson.com/product-images/26/5.jpg","https://cdn.dummyjson.com/product-images/26/thumbnail.jpg"]},{"id":27,"title":"Flying Wooden Bird","description":"Package Include 6 Birds with Adhesive Tape Shape: 3D Shaped Wooden Birds Material: Wooden MDF, Laminated 3.5mm","price":51,"discountPercentage":15.58,"rating":4.41,"stock":17,"brand":"Flying Wooden","category":"home-decoration","thumbnail":"https://cdn.dummyjson.com/product-images/27/thumbnail.webp","images":["https://cdn.dummyjson.com/product-images/27/1.jpg","https://cdn.dummyjson.com/product-images/27/2.jpg","https://cdn.dummyjson.com/product-images/27/3.jpg","https://cdn.dummyjson.com/product-images/27/4.jpg","https://cdn.dummyjson.com/product-images/27/thumbnail.webp"]},{"id":28,"title":"3D Embellishment Art Lamp","description":"3D led lamp sticker Wall sticker 3d wall art light on/off button  cell operated (included)","price":20,"discountPercentage":16.49,"rating":4.82,"stock":54,"brand":"LED Lights","category":"home-decoration","thumbnail":"https://cdn.dummyjson.com/product-images/28/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/28/1.jpg","https://cdn.dummyjson.com/product-images/28/2.jpg","https://cdn.dummyjson.com/product-images/28/3.png","https://cdn.dummyjson.com/product-images/28/4.jpg","https://cdn.dummyjson.com/product-images/28/thumbnail.jpg"]},{"id":29,"title":"Handcraft Chinese style","description":"Handcraft Chinese style art luxury palace hotel villa mansion home decor ceramic vase with brass fruit plate","price":60,"discountPercentage":15.34,"rating":4.44,"stock":7,"brand":"luxury palace","category":"home-decoration","thumbnail":"https://cdn.dummyjson.com/product-images/29/thumbnail.webp","images":["https://cdn.dummyjson.com/product-images/29/1.jpg","https://cdn.dummyjson.com/product-images/29/2.jpg","https://cdn.dummyjson.com/product-images/29/3.webp","https://cdn.dummyjson.com/product-images/29/4.webp","https://cdn.dummyjson.com/product-images/29/thumbnail.webp"]},{"id":30,"title":"Key Holder","description":"Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality","price":30,"discountPercentage":2.92,"rating":4.92,"stock":54,"brand":"Golden","category":"home-decoration","thumbnail":"https://cdn.dummyjson.com/product-images/30/thumbnail.jpg","images":["https://cdn.dummyjson.com/product-images/30/1.jpg","https://cdn.dummyjson.com/product-images/30/2.jpg","https://cdn.dummyjson.com/product-images/30/3.jpg","https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"]}],"total":100,"skip":0,"limit":30}');
-
-},{}],"iXUvL":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c3bd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c3bd.prelude(module);
-
-try {
-// const elem = {
-//     "id": 1,
-//     "title": "iPhone 9",
-//     "description": "An apple mobile which is nothing like apple",
-//     "price": 549,
-//     "discountPercentage": 12.96,
-//     "rating": 4.69,
-//     "stock": 94,
-//     "brand": "Apple",
-//     "category": "smartphones",
-//     "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-//     "images": [
-//         "https://cdn.dummyjson.com/product-images/1/1.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/2.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/3.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/4.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
-//     ]
-// }
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Card = ({ elem })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "card",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                className: "card-title",
-                children: elem.title
-            }, void 0, false, {
-                fileName: "src/pages/homepage/card.js",
-                lineNumber: 23,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "card-img",
-                src: elem.images[0],
-                alt: ""
-            }, void 0, false, {
-                fileName: "src/pages/homepage/card.js",
-                lineNumber: 24,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "card-button",
-                children: "Visit page"
-            }, void 0, false, {
-                fileName: "src/pages/homepage/card.js",
-                lineNumber: 25,
-                columnNumber: 17
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "card-info",
-                children: [
-                    "Rs ",
-                    elem.price
-                ]
-            }, void 0, true, {
-                fileName: "src/pages/homepage/card.js",
-                lineNumber: 26,
-                columnNumber: 17
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "card-desc",
-                children: elem.description
-            }, void 0, false, {
-                fileName: "src/pages/homepage/card.js",
-                lineNumber: 27,
-                columnNumber: 17
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/pages/homepage/card.js",
-        lineNumber: 22,
-        columnNumber: 9
-    }, undefined);
-};
-_c = Card;
-module.exports = Card;
-var _c;
-$RefreshReg$(_c, "Card");
-
-  $parcel$ReactRefreshHelpers$c3bd.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lENFd":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lENFd":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$731c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

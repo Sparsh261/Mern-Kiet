@@ -2961,6 +2961,8 @@ var _homepageJs = require("./src/pages/homepage.js");
 var _homepageJsDefault = parcelHelpers.interopDefault(_homepageJs);
 var _historyJs = require("./src/pages/history.js");
 var _historyJsDefault = parcelHelpers.interopDefault(_historyJs);
+var _historyInfoPageJs = require("./src/pages/historyInfoPage.js");
+var _historyInfoPageJsDefault = parcelHelpers.interopDefault(_historyInfoPageJs);
 var _imageGeneratorJs = require("./src/pages/imageGenerator.js");
 var _imageGeneratorJsDefault = parcelHelpers.interopDefault(_imageGeneratorJs);
 var _reactRouterDom = require("react-router-dom");
@@ -2969,24 +2971,32 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepageJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 11,
-            columnNumber: 16
+            lineNumber: 12,
+            columnNumber: 14
         }, undefined)
     },
     {
         path: "/generator",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 15,
-            columnNumber: 18
+            lineNumber: 16,
+            columnNumber: 14
         }, undefined)
     },
     {
         path: "/history",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 19,
-            columnNumber: 16
+            lineNumber: 20,
+            columnNumber: 14
+        }, undefined)
+    },
+    {
+        path: "/history/:id",
+        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyInfoPageJsDefault.default), {}, void 0, false, {
+            fileName: "app.js",
+            lineNumber: 24,
+            columnNumber: 14
         }, undefined)
     }
 ]);
@@ -2997,14 +3007,14 @@ const App = ()=>{
         router: router
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 27,
-        columnNumber: 12
+        lineNumber: 32,
+        columnNumber: 10
     }, undefined);
 };
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 30,
+    lineNumber: 35,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -3015,7 +3025,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/homepage.js":"bpVg1","./src/pages/imageGenerator.js":"13Wl2","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./src/pages/history.js":"711vj"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/homepage.js":"bpVg1","./src/pages/imageGenerator.js":"13Wl2","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./src/pages/history.js":"711vj","./src/pages/historyInfoPage.js":"56GEP"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -34343,6 +34353,8 @@ var _navbar = require("./navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _historyCss = require("./history.css");
 var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
 const dummyData = [
     {
         id: "1",
@@ -34364,26 +34376,26 @@ const chmgdesc = ()=>{
     console.log("chngdesc");
 };
 const History = ()=>{
-    // const [title,setTitle] = useState("flower");
-    // const [desc,setdesc] = useState();
-    const // useEffect(()=>{
-    //     console.log("title cnged");
-    // },[title]);
-    // useEffect(()=>{
-    //     console.log("desc cnged");
-    // },[desc]);
-    let;
-    const data = async ()=>{
-        const res = await fetch("https://dummyjson.com/products");
-        d = await res.json();
+    _s();
+    const [query, setQuery] = (0, _react.useState)("");
+    const [data, setData] = (0, _react.useState)([]);
+    const [dataQuery, setDataQuery] = (0, _react.useState)([]);
+    const getQuery = async ()=>{
+        const res = await fetch(`https://dummyjson.com/products/search?q=${query}`);
+        let d = await res.json();
+        setDataQuery(d.products);
         console.log(d);
     };
-    data();
+    (0, _react.useEffect)(()=>{
+        getQuery();
+    }, [
+        query
+    ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
                 fileName: "src/pages/history.js",
-                lineNumber: 49,
+                lineNumber: 47,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34393,81 +34405,117 @@ const History = ()=>{
                         children: "History"
                     }, void 0, false, {
                         fileName: "src/pages/history.js",
-                        lineNumber: 51,
+                        lineNumber: 49,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                 onChange: (e)=>{
-                                    setTitle(e.target.value);
+                                    setQuery(e.target.value);
                                 },
-                                value: title
+                                value: query
                             }, void 0, false, {
                                 fileName: "src/pages/history.js",
-                                lineNumber: 56,
+                                lineNumber: 51,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                 fileName: "src/pages/history.js",
-                                lineNumber: 56,
-                                columnNumber: 94
+                                lineNumber: 51,
+                                columnNumber: 95
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                onChange: (e)=>{
-                                    setdesc(e.target.value);
-                                }
-                            }, void 0, false, {
-                                fileName: "src/pages/history.js",
-                                lineNumber: 57,
-                                columnNumber: 21
-                            }, undefined)
+                            dataQuery.map((elem)=>{
+                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                            children: elem.title
+                                        }, void 0, false, {
+                                            fileName: "src/pages/history.js",
+                                            lineNumber: 56,
+                                            columnNumber: 33
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: elem.description
+                                        }, void 0, false, {
+                                            fileName: "src/pages/history.js",
+                                            lineNumber: 57,
+                                            columnNumber: 33
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                            src: elem.images[0]
+                                        }, void 0, false, {
+                                            fileName: "src/pages/history.js",
+                                            lineNumber: 58,
+                                            columnNumber: 33
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                            to: `/history/${elem.id}`,
+                                            children: "more"
+                                        }, void 0, false, {
+                                            fileName: "src/pages/history.js",
+                                            lineNumber: 59,
+                                            columnNumber: 33
+                                        }, undefined)
+                                    ]
+                                }, elem.id, true, {
+                                    fileName: "src/pages/history.js",
+                                    lineNumber: 55,
+                                    columnNumber: 33
+                                }, undefined);
+                            })
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/history.js",
-                        lineNumber: 52,
+                        lineNumber: 50,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "his1",
-                        children: d.map((elem)=>{
+                        children: data.map((elem)=>{
                             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                        children: elem.id
-                                    }, void 0, false, {
-                                        fileName: "src/pages/history.js",
-                                        lineNumber: 65,
-                                        columnNumber: 33
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                         children: elem.title
                                     }, void 0, false, {
                                         fileName: "src/pages/history.js",
-                                        lineNumber: 67,
+                                        lineNumber: 69,
                                         columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: elem.description
+                                    }, void 0, false, {
+                                        fileName: "src/pages/history.js",
+                                        lineNumber: 71,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                        fileName: "src/pages/history.js",
+                                        lineNumber: 71,
+                                        columnNumber: 58
                                     }, undefined)
                                 ]
                             }, elem.id, true, {
                                 fileName: "src/pages/history.js",
-                                lineNumber: 64,
+                                lineNumber: 68,
                                 columnNumber: 29
                             }, undefined);
                         })
                     }, void 0, false, {
                         fileName: "src/pages/history.js",
-                        lineNumber: 61,
+                        lineNumber: 65,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/history.js",
-                lineNumber: 50,
+                lineNumber: 48,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
+_s(History, "tRPcKSLQcNt9PuUW8yzYqUeIAQE=");
 _c = History;
 exports.default = History;
 var _c;
@@ -34478,6 +34526,35 @@ $RefreshReg$(_c, "History");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./navbar":"4XYwF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./history.css":"jWgFB","react":"21dqq"}],"jWgFB":[function() {},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequirecd17")
+},{"react/jsx-dev-runtime":"iTorj","./navbar":"4XYwF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./history.css":"jWgFB","react":"21dqq","react-router-dom":"9xmpe"}],"jWgFB":[function() {},{}],"56GEP":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4b13 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4b13.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const HistoryInfoPage = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Helllo"
+    }, void 0, false, {
+        fileName: "src/pages/historyInfoPage.js",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+_c = HistoryInfoPage;
+exports.default = HistoryInfoPage;
+var _c;
+$RefreshReg$(_c, "HistoryInfoPage");
+
+  $parcel$ReactRefreshHelpers$4b13.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequirecd17")
 
 //# sourceMappingURL=index.5baa4167.js.map

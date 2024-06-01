@@ -55,6 +55,7 @@
 }
 
 .nav-search-bar input {
+  color: #000;
   border: none;
   width: 100%;
 }

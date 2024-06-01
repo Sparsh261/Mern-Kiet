@@ -1,16 +1,47 @@
-import Data from '../../../data.json'
 import Card from './card'
+import { useEffect, useState } from "react";
 
 
-const Carousel = () => {
+const Carousel = ({ toSearch }) => {
 
-    const card = Data.products.map(elem=>{
-        return(
-            <Card elem={elem}/>
-        )
-    })
+    const [data, setData] = useState([]);
+    const [query, setQuery] = useState('');
 
-    // console.log(Data.products[0])
+    const getData = async () => {
+        console.log(toSearch)
+        if(toSearch){
+            setQuery(toSearch)
+        }
+        if (query.length > 0) {
+            console.log(toSearch + "by")
+            const shorturl = await fetch(`http://localhost:1400/products?title=${query}`, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            })
+                .then((res) => res.json()).then(r => {
+                    setData(r.data.product);
+                })
+                .catch((err) => console.log(err))
+            console.log(data);
+        }
+        else {
+            console.log(toSearch + "hi")
+            const shorturl = await fetch('http://localhost:1400/products', {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            })
+                .then((res) => res.json()).then(r => {
+                    setData(r.data.product);
+                })
+                .catch((err) => console.log(err))
+            // console.log(data);
+        }
+    }
+    useEffect(() => { getData() }, [query,toSearch])
 
     return (
 
@@ -22,12 +53,15 @@ const Carousel = () => {
                 </div>
             </div>
 
-
             <div className="content">
-                {card}
+                {data.map(elem => {
+                    return (
+                        <div key={elem.id_}>
+                            <Card elem={elem} />
+                        </div>
+                    )
+                })}
             </div>
-
-
         </div>
 
     )
