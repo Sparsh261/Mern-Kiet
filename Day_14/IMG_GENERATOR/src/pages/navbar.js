@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./navbar.css";
-
+import {useContext} from "react";
+import PointsContext from "../context/pointsContext";
 
 
 const Navbar = (props)=>{
@@ -10,6 +11,8 @@ const Navbar = (props)=>{
     const customColor = (x) => {
         return {color:page===x?'red':'white'}
     }
+
+    const contextValues = useContext(PointsContext);
 
 
     return(
@@ -22,6 +25,9 @@ const Navbar = (props)=>{
                 <Link to="/help">Help</Link>
             </div>
             <div className="right">
+            </div>
+            <div className="right" style={{padding: '4px', color: 'brown'}}>
+                {contextValues.userPoints}
             </div>
         </div>
     )

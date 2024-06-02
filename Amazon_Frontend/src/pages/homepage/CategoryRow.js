@@ -6,7 +6,7 @@ const Categoryrow = () => {
                 All
             </div>
             <div class="panel-items">
-                <div class="items border">Today's Deals</div>
+                <div class="items border">Todays Deals</div>
                 <div class="items border">Customer Service</div>
                 <div class="items border">Registry</div>
                 <div class="items border">Gift Cards</div>

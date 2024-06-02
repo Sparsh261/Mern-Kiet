@@ -2,18 +2,18 @@ import Card from './card'
 import { useEffect, useState } from "react";
 
 
-const Carousel = ({ toSearch }) => {
+const Carousel = ({ query }) => {
 
     const [data, setData] = useState([]);
-    const [query, setQuery] = useState('');
+   
+
+   
+    
 
     const getData = async () => {
-        console.log(toSearch)
-        if(toSearch){
-            setQuery(toSearch)
-        }
-        if (query.length > 0) {
-            console.log(toSearch + "by")
+        
+        if (query.length> 0 && query != undefined) {
+          
             const shorturl = await fetch(`http://localhost:1400/products?title=${query}`, {
                 method: 'GET',
                 headers: {
@@ -27,7 +27,6 @@ const Carousel = ({ toSearch }) => {
             console.log(data);
         }
         else {
-            console.log(toSearch + "hi")
             const shorturl = await fetch('http://localhost:1400/products', {
                 method: 'GET',
                 headers: {
@@ -41,7 +40,7 @@ const Carousel = ({ toSearch }) => {
             // console.log(data);
         }
     }
-    useEffect(() => { getData() }, [query,toSearch])
+    useEffect(() => { getData() }, [query])
 
     return (
 

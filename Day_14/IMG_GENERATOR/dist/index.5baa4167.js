@@ -2966,58 +2966,71 @@ var _historyInfoPageJsDefault = parcelHelpers.interopDefault(_historyInfoPageJs)
 var _imageGeneratorJs = require("./src/pages/imageGenerator.js");
 var _imageGeneratorJsDefault = parcelHelpers.interopDefault(_imageGeneratorJs);
 var _reactRouterDom = require("react-router-dom");
-await imageModel.create({
-    searchText: searchText
-});
-const router = (0, _reactRouterDom.createBrowserRouter)([
-    {
-        path: "/",
-        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepageJsDefault.default), {}, void 0, false, {
-            fileName: "app.js",
-            lineNumber: 16,
-            columnNumber: 14
-        }, undefined)
-    },
-    {
-        path: "/generator",
-        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
-            fileName: "app.js",
-            lineNumber: 20,
-            columnNumber: 14
-        }, undefined)
-    },
-    {
-        path: "/history",
-        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyJsDefault.default), {}, void 0, false, {
-            fileName: "app.js",
-            lineNumber: 24,
-            columnNumber: 14
-        }, undefined)
-    },
-    {
-        path: "/history/:id",
-        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyInfoPageJsDefault.default), {}, void 0, false, {
-            fileName: "app.js",
-            lineNumber: 28,
-            columnNumber: 14
-        }, undefined)
-    }
-]);
+var _pointsContextJs = require("./src/context/pointsContext.js");
+var _pointsContextJsDefault = parcelHelpers.interopDefault(_pointsContextJs);
+var _s = $RefreshSig$();
 const parent = document.getElementById("root");
 const root = (0, _clientDefault.default).createRoot(parent);
 const App = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
-        router: router
+    _s();
+    const [userPoints, setUserPoints] = (0, _react.useState)(20);
+    const router = (0, _reactRouterDom.createBrowserRouter)([
+        {
+            path: "/",
+            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepageJsDefault.default), {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 23,
+                columnNumber: 16
+            }, undefined)
+        },
+        {
+            path: "/generator",
+            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 27,
+                columnNumber: 16
+            }, undefined)
+        },
+        {
+            path: "/history",
+            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyJsDefault.default), {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 31,
+                columnNumber: 16
+            }, undefined)
+        },
+        {
+            path: "/history/:id",
+            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyInfoPageJsDefault.default), {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 35,
+                columnNumber: 16
+            }, undefined)
+        }
+    ]);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _pointsContextJsDefault.default).Provider, {
+        value: {
+            userPoints: userPoints,
+            setUserPoints: setUserPoints
+        },
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
+            router: router
+        }, void 0, false, {
+            fileName: "app.js",
+            lineNumber: 41,
+            columnNumber: 9
+        }, undefined)
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 36,
-        columnNumber: 10
+        lineNumber: 40,
+        columnNumber: 5
     }, undefined);
 };
+_s(App, "n8H/UrnbDk137uVdDsFIAnnNePc=");
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 39,
+    lineNumber: 47,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -3028,7 +3041,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/homepage.js":"bpVg1","./src/pages/imageGenerator.js":"13Wl2","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./src/pages/history.js":"711vj","./src/pages/historyInfoPage.js":"56GEP"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/pages/homepage.js":"bpVg1","./src/pages/imageGenerator.js":"13Wl2","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./src/pages/history.js":"711vj","./src/pages/historyInfoPage.js":"56GEP","./src/context/pointsContext.js":"3EBhw"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27323,6 +27336,8 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _navbar = require("./navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _react = require("react");
+var _pointsContext = require("../context/pointsContext");
+var _pointsContextDefault = parcelHelpers.interopDefault(_pointsContext);
 var _s = $RefreshSig$();
 const ImageGenerator = ()=>{
     _s();
@@ -27332,6 +27347,7 @@ const ImageGenerator = ()=>{
         setName(x.target.value);
     };
     const handleClick = async ()=>{
+        cValue.setUserPoints(cValue.userPoints - 1);
         const res = await fetch("http://localhost:1400/api/images", {
             method: "POST",
             body: JSON.stringify({
@@ -27344,13 +27360,14 @@ const ImageGenerator = ()=>{
         const data = await res.json();
         if (data?.status === "success") setSrc(data.data.url);
     };
+    const cValue = (0, _react.useContext)((0, _pointsContextDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
                 page: "imageGenerator"
             }, void 0, false, {
                 fileName: "src/pages/imageGenerator.js",
-                lineNumber: 30,
+                lineNumber: 35,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27360,7 +27377,7 @@ const ImageGenerator = ()=>{
                         src: src
                     }, void 0, false, {
                         fileName: "src/pages/imageGenerator.js",
-                        lineNumber: 32,
+                        lineNumber: 37,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27369,7 +27386,7 @@ const ImageGenerator = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/pages/imageGenerator.js",
-                        lineNumber: 33,
+                        lineNumber: 38,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27377,19 +27394,19 @@ const ImageGenerator = ()=>{
                         children: "generate "
                     }, void 0, false, {
                         fileName: "src/pages/imageGenerator.js",
-                        lineNumber: 34,
+                        lineNumber: 39,
                         columnNumber: 21
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/imageGenerator.js",
-                lineNumber: 31,
+                lineNumber: 36,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(ImageGenerator, "wzMQ/T3WLFQKaa2hlFcuF5nPWGg=");
+_s(ImageGenerator, "Il17fa5WfLg/m+ETMNIKJdPzspw=");
 _c = ImageGenerator;
 exports.default = ImageGenerator;
 var _c;
@@ -27400,7 +27417,7 @@ $RefreshReg$(_c, "ImageGenerator");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./navbar":"4XYwF","react":"21dqq"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./navbar":"4XYwF","react":"21dqq","../context/pointsContext":"3EBhw"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27580,13 +27597,19 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactRouterDom = require("react-router-dom");
 var _navbarCss = require("./navbar.css");
+var _react = require("react");
+var _pointsContext = require("../context/pointsContext");
+var _pointsContextDefault = parcelHelpers.interopDefault(_pointsContext);
+var _s = $RefreshSig$();
 const Navbar = (props)=>{
+    _s();
     const page = props.page;
     const customColor = (x)=>{
         return {
             color: page === x ? "red" : "white"
         };
     };
+    const contextValues = (0, _react.useContext)((0, _pointsContextDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header-parent-container",
         children: [
@@ -27599,7 +27622,7 @@ const Navbar = (props)=>{
                         children: "Home"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 18,
+                        lineNumber: 21,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27608,7 +27631,7 @@ const Navbar = (props)=>{
                         children: "Image Generator"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 19,
+                        lineNumber: 22,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27617,7 +27640,7 @@ const Navbar = (props)=>{
                         children: "History"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 20,
+                        lineNumber: 23,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27625,7 +27648,7 @@ const Navbar = (props)=>{
                         children: "Contact Us"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 21,
+                        lineNumber: 24,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27633,29 +27656,42 @@ const Navbar = (props)=>{
                         children: "Help"
                     }, void 0, false, {
                         fileName: "src/pages/navbar.js",
-                        lineNumber: 22,
+                        lineNumber: 25,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/navbar.js",
-                lineNumber: 17,
+                lineNumber: 20,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "right"
             }, void 0, false, {
                 fileName: "src/pages/navbar.js",
-                lineNumber: 24,
+                lineNumber: 27,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "right",
+                style: {
+                    padding: "4px",
+                    color: "brown"
+                },
+                children: contextValues.userPoints
+            }, void 0, false, {
+                fileName: "src/pages/navbar.js",
+                lineNumber: 29,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/navbar.js",
-        lineNumber: 16,
+        lineNumber: 19,
         columnNumber: 9
     }, undefined);
 };
+_s(Navbar, "Y9XZS4O6OPXVK88OgBxSmJkdq3s=");
 _c = Navbar;
 exports.default = Navbar;
 var _c;
@@ -27666,7 +27702,7 @@ $RefreshReg$(_c, "Navbar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./navbar.css":"2uX4c","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"2uX4c":[function() {},{}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./navbar.css":"2uX4c","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","react":"21dqq","../context/pointsContext":"3EBhw"}],"2uX4c":[function() {},{}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.23.1
  *
@@ -34359,7 +34395,25 @@ function persistAppliedTransitions(_window, transitions) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"711vj":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3EBhw":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$25a9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$25a9.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const PointsContext = /*#__PURE__*/ (0, _react.createContext)();
+exports.default = PointsContext;
+
+  $parcel$ReactRefreshHelpers$25a9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"711vj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a6c2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

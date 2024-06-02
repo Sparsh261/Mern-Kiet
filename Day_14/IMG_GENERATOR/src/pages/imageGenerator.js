@@ -1,5 +1,7 @@
 import Navbar from "./navbar";
 import { useState } from "react";
+import {useContext} from "react";
+import PointsContext from "../context/pointsContext";
 
 const ImageGenerator = () => {
     const [name, setName] = useState("d");
@@ -10,6 +12,7 @@ const ImageGenerator = () => {
     }
 
     const handleClick = async() => {
+        cValue.setUserPoints(cValue.userPoints-1);
         const res = await fetch('http://localhost:1400/api/images',{
             method:"POST",
             body:JSON.stringify({
@@ -24,6 +27,8 @@ const ImageGenerator = () => {
             setSrc(data.data.url)
         }
     }
+
+    const cValue = useContext(PointsContext);
 
     return (
         <>

@@ -2,37 +2,12 @@ import { useEffect, useState } from "react"
 import Carousel from "./Carousel";
 
 
-
-
-
-const Navbar = () => {
+const Navbar = ({setQuery}) => {
 
     let [toSearch, settoSearch] = useState('');
 
-
-
-    const getData = async () => {
-
-
-        const shorturl = await fetch(`http://localhost:1400/products?title=${toSearch}`, {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json"
-            },
-        })
-            .then((res) => res.json()).then(r => {
-                // setData(r.data.product);
-                console.log(r);
-            })
-            .catch((err) => console.log(err))
-    }
-
     useEffect(() => {
-        // if (toSearch) {
-            // getData();
-            <Carousel toSearch={toSearch}/>
-            console.log(toSearch.length);
-        // }
+        setQuery(toSearch)
     }, [toSearch])
 
 
@@ -57,7 +32,7 @@ const Navbar = () => {
                 <input type="text" placeholder="Search Amazon" value={toSearch}
                      onChange={(e) => { settoSearch(e.target.value) }} />
                 <div class="search-bar-logo">
-                    <button onClick={()=>{<Carousel toSearch={toSearch}/>}}>
+                    <button >
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>

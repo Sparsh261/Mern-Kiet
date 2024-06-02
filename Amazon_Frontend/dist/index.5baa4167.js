@@ -27248,36 +27248,45 @@ var _categoryRow = require("./categoryRow");
 var _categoryRowDefault = parcelHelpers.interopDefault(_categoryRow);
 var _footer = require("./Footer");
 var _footerDefault = parcelHelpers.interopDefault(_footer);
+var _react = require("react");
+var _s = $RefreshSig$();
 const Homepage = ()=>{
+    _s();
+    const [query, setQuery] = (0, _react.useState)("");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
+                setQuery: setQuery
+            }, void 0, false, {
                 fileName: "src/pages/homepage/homepage.js",
-                lineNumber: 10,
+                lineNumber: 14,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _categoryRowDefault.default), {}, void 0, false, {
                 fileName: "src/pages/homepage/homepage.js",
-                lineNumber: 11,
+                lineNumber: 15,
                 columnNumber: 9
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {
+                query: query
+            }, void 0, false, {
                 fileName: "src/pages/homepage/homepage.js",
-                lineNumber: 12,
+                lineNumber: 16,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/pages/homepage/homepage.js",
-                lineNumber: 13,
+                lineNumber: 17,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/homepage/homepage.js",
-        lineNumber: 9,
+        lineNumber: 13,
         columnNumber: 8
     }, undefined);
 };
+_s(Homepage, "qO/HZodsWTfJhuzZtdaxiosei2U=");
 _c = Homepage;
 exports.default = Homepage;
 var _c;
@@ -27288,7 +27297,7 @@ $RefreshReg$(_c, "Homepage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Navbar":"48pck","./categoryRow":"ieYIs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Carousel":"8Ro6d","./Footer":"lENFd"}],"48pck":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./Navbar":"48pck","./categoryRow":"ieYIs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Carousel":"8Ro6d","./Footer":"lENFd","react":"21dqq"}],"48pck":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$bccc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27302,32 +27311,11 @@ var _react = require("react");
 var _carousel = require("./Carousel");
 var _carouselDefault = parcelHelpers.interopDefault(_carousel);
 var _s = $RefreshSig$();
-const Navbar = ()=>{
+const Navbar = ({ setQuery })=>{
     _s();
     let [toSearch, settoSearch] = (0, _react.useState)("");
-    const getData = async ()=>{
-        const shorturl = await fetch(`http://localhost:1400/products?title=${toSearch}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then((res)=>res.json()).then((r)=>{
-            // setData(r.data.product);
-            console.log(r);
-        }).catch((err)=>console.log(err));
-    };
     (0, _react.useEffect)(()=>{
-        // if (toSearch) {
-        // getData();
-        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {
-            toSearch: toSearch
-        }, void 0, false, {
-            fileName: "src/pages/homepage/Navbar.js",
-            lineNumber: 33,
-            columnNumber: 13
-        }, undefined);
-        console.log(toSearch.length);
-    // }
+        setQuery(toSearch);
     }, [
         toSearch
     ]);
@@ -27340,12 +27328,12 @@ const Navbar = ()=>{
                     class: "logo"
                 }, void 0, false, {
                     fileName: "src/pages/homepage/Navbar.js",
-                    lineNumber: 42,
+                    lineNumber: 17,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 41,
+                lineNumber: 16,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27356,14 +27344,14 @@ const Navbar = ()=>{
                         children: "Deliver to"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 48,
+                        lineNumber: 23,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                         class: "fa-solid fa-location-dot"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 49,
+                        lineNumber: 24,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27371,13 +27359,13 @@ const Navbar = ()=>{
                         children: "India"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 50,
+                        lineNumber: 25,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 47,
+                lineNumber: 22,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27388,12 +27376,12 @@ const Navbar = ()=>{
                             children: "All "
                         }, void 0, false, {
                             fileName: "src/pages/homepage/Navbar.js",
-                            lineNumber: 55,
+                            lineNumber: 30,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 54,
+                        lineNumber: 29,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27405,42 +27393,33 @@ const Navbar = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 57,
+                        lineNumber: 32,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         class: "search-bar-logo",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            onClick: ()=>{
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {
-                                    toSearch: toSearch
-                                }, void 0, false, {
-                                    fileName: "src/pages/homepage/Navbar.js",
-                                    lineNumber: 60,
-                                    columnNumber: 43
-                                }, void 0);
-                            },
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
                                 class: "fa-solid fa-magnifying-glass"
                             }, void 0, false, {
                                 fileName: "src/pages/homepage/Navbar.js",
-                                lineNumber: 61,
+                                lineNumber: 36,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/pages/homepage/Navbar.js",
-                            lineNumber: 60,
+                            lineNumber: 35,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 59,
+                        lineNumber: 34,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 53,
+                lineNumber: 28,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27451,7 +27430,7 @@ const Navbar = ()=>{
                         children: "Hello,Sign in"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 67,
+                        lineNumber: 42,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27459,13 +27438,13 @@ const Navbar = ()=>{
                         children: "Accounts & Requests"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 68,
+                        lineNumber: 43,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 66,
+                lineNumber: 41,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27476,7 +27455,7 @@ const Navbar = ()=>{
                         children: "Returns"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 72,
+                        lineNumber: 47,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27484,13 +27463,13 @@ const Navbar = ()=>{
                         children: "& orders"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 73,
+                        lineNumber: 48,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 71,
+                lineNumber: 46,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27500,20 +27479,20 @@ const Navbar = ()=>{
                         class: "fa-solid fa-cart-shopping"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/Navbar.js",
-                        lineNumber: 77,
+                        lineNumber: 52,
                         columnNumber: 17
                     }, undefined),
                     "Cart"
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/Navbar.js",
-                lineNumber: 76,
+                lineNumber: 51,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/homepage/Navbar.js",
-        lineNumber: 40,
+        lineNumber: 15,
         columnNumber: 9
     }, undefined);
 };
@@ -27710,15 +27689,11 @@ var _card = require("./card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
 var _react = require("react");
 var _s = $RefreshSig$();
-const Carousel = ({ toSearch })=>{
+const Carousel = ({ query })=>{
     _s();
     const [data, setData] = (0, _react.useState)([]);
-    const [query, setQuery] = (0, _react.useState)("");
     const getData = async ()=>{
-        console.log(toSearch);
-        if (toSearch) setQuery(toSearch);
-        if (query.length > 0) {
-            console.log(toSearch + "by");
+        if (query.length > 0 && query != undefined) {
             const shorturl = await fetch(`http://localhost:1400/products?title=${query}`, {
                 method: "GET",
                 headers: {
@@ -27729,7 +27704,6 @@ const Carousel = ({ toSearch })=>{
             }).catch((err)=>console.log(err));
             console.log(data);
         } else {
-            console.log(toSearch + "hi");
             const shorturl = await fetch("http://localhost:1400/products", {
                 method: "GET",
                 headers: {
@@ -27744,8 +27718,7 @@ const Carousel = ({ toSearch })=>{
     (0, _react.useEffect)(()=>{
         getData();
     }, [
-        query,
-        toSearch
+        query
     ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
@@ -27756,12 +27729,12 @@ const Carousel = ({ toSearch })=>{
                     children: "You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. Click here to go to amazon.in"
                 }, void 0, false, {
                     fileName: "src/pages/homepage/Carousel.js",
-                    lineNumber: 50,
+                    lineNumber: 49,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/homepage/Carousel.js",
-                lineNumber: 49,
+                lineNumber: 48,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27772,28 +27745,28 @@ const Carousel = ({ toSearch })=>{
                             elem: elem
                         }, void 0, false, {
                             fileName: "src/pages/homepage/Carousel.js",
-                            lineNumber: 60,
+                            lineNumber: 59,
                             columnNumber: 29
                         }, undefined)
                     }, elem.id_, false, {
                         fileName: "src/pages/homepage/Carousel.js",
-                        lineNumber: 59,
+                        lineNumber: 58,
                         columnNumber: 25
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/pages/homepage/Carousel.js",
-                lineNumber: 56,
+                lineNumber: 55,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/homepage/Carousel.js",
-        lineNumber: 48,
+        lineNumber: 47,
         columnNumber: 9
     }, undefined);
 };
-_s(Carousel, "gVP2AkICvfumelkruAKKwuQ2yZw=");
+_s(Carousel, "IEMTtLVFIuToo7X/raQbJAxzNQU=");
 _c = Carousel;
 exports.default = Carousel;
 var _c;
@@ -27933,7 +27906,7 @@ const Categoryrow = ()=>{
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         class: "items border",
-                        children: "Today's Deals"
+                        children: "Todays Deals"
                     }, void 0, false, {
                         fileName: "src/pages/homepage/categoryRow.js",
                         lineNumber: 9,
