@@ -2966,12 +2966,15 @@ var _historyInfoPageJsDefault = parcelHelpers.interopDefault(_historyInfoPageJs)
 var _imageGeneratorJs = require("./src/pages/imageGenerator.js");
 var _imageGeneratorJsDefault = parcelHelpers.interopDefault(_imageGeneratorJs);
 var _reactRouterDom = require("react-router-dom");
+await imageModel.create({
+    searchText: searchText
+});
 const router = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepageJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 12,
+            lineNumber: 16,
             columnNumber: 14
         }, undefined)
     },
@@ -2979,7 +2982,7 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
         path: "/generator",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageGeneratorJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 16,
+            lineNumber: 20,
             columnNumber: 14
         }, undefined)
     },
@@ -2987,7 +2990,7 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
         path: "/history",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 20,
+            lineNumber: 24,
             columnNumber: 14
         }, undefined)
     },
@@ -2995,7 +2998,7 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
         path: "/history/:id",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _historyInfoPageJsDefault.default), {}, void 0, false, {
             fileName: "app.js",
-            lineNumber: 24,
+            lineNumber: 28,
             columnNumber: 14
         }, undefined)
     }
@@ -3007,14 +3010,14 @@ const App = ()=>{
         router: router
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 32,
+        lineNumber: 36,
         columnNumber: 10
     }, undefined);
 };
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 35,
+    lineNumber: 39,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -27327,7 +27330,6 @@ const ImageGenerator = ()=>{
     const [src, setSrc] = (0, _react.useState)();
     const func = (x)=>{
         setName(x.target.value);
-    // console.log(name);
     };
     const handleClick = async ()=>{
         const res = await fetch("http://localhost:1400/api/images", {
@@ -27339,7 +27341,6 @@ const ImageGenerator = ()=>{
                 "Content-Type": "application/json"
             }
         });
-        // console.log(res)
         const data = await res.json();
         if (data?.status === "success") setSrc(data.data.url);
     };
@@ -27349,7 +27350,7 @@ const ImageGenerator = ()=>{
                 page: "imageGenerator"
             }, void 0, false, {
                 fileName: "src/pages/imageGenerator.js",
-                lineNumber: 35,
+                lineNumber: 30,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27359,7 +27360,7 @@ const ImageGenerator = ()=>{
                         src: src
                     }, void 0, false, {
                         fileName: "src/pages/imageGenerator.js",
-                        lineNumber: 39,
+                        lineNumber: 32,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27368,7 +27369,7 @@ const ImageGenerator = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/pages/imageGenerator.js",
-                        lineNumber: 40,
+                        lineNumber: 33,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27376,13 +27377,13 @@ const ImageGenerator = ()=>{
                         children: "generate "
                     }, void 0, false, {
                         fileName: "src/pages/imageGenerator.js",
-                        lineNumber: 41,
+                        lineNumber: 34,
                         columnNumber: 21
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/imageGenerator.js",
-                lineNumber: 36,
+                lineNumber: 31,
                 columnNumber: 13
             }, undefined)
         ]

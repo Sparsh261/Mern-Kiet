@@ -4,7 +4,7 @@ const app = require('./app.js')
 const url = 'mongodb+srv://_USERNAME_:_PASSWORD_@cluster0.3pqyhsm.mongodb.net/_DATABASENAME_?retryWrites=true&w=majority&appName=Cluster0'
 const dataBaseUser = 'SparshChauhan'
 const dataBasePassword = 'chauhansparsh112'
-const dataBaseName = ''
+const dataBaseName = 'Image-Generator'
 
 let dbLink = url.replace("_USERNAME_",dataBaseUser)
 dbLink =  dbLink.replace("_PASSWORD_",dataBasePassword)
