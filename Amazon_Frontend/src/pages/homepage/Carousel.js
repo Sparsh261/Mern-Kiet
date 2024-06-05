@@ -6,14 +6,9 @@ const Carousel = ({ query }) => {
 
     const [data, setData] = useState([]);
    
-
-   
-    
-
     const getData = async () => {
         
         if (query.length> 0 && query != undefined) {
-          
             const shorturl = await fetch(`http://localhost:1400/products?title=${query}`, {
                 method: 'GET',
                 headers: {
@@ -24,7 +19,7 @@ const Carousel = ({ query }) => {
                     setData(r.data.product);
                 })
                 .catch((err) => console.log(err))
-            console.log(data);
+        //     console.log(data);
         }
         else {
             const shorturl = await fetch('http://localhost:1400/products', {

@@ -7,11 +7,8 @@ import ImageGenerator from "./src/pages/imageGenerator.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PointsContext from "./src/context/pointsContext.js";
 
-
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
-
-
 
 const App = () => {
 

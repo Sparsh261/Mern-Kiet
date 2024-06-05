@@ -3,11 +3,12 @@ const productModel = require('../models/productsModel.js');
 const getAllProducts = async (req, res) => {
     const {sort='price',page=1,pageSize=100,fields="-info",...q} = req.query;
     try {
-
+        console.log(q.title)
         let query = productModel.find();
         
-        if(q){
-             query = productModel.find(q);
+        if(q.length != undefined){
+            //  query = productModel.find(q);
+             query = productModel.find({title:{"$regex":q.title}});
         }
 
         query  = query.sort(sort.split(',').join(' '));
@@ -20,7 +21,6 @@ const getAllProducts = async (req, res) => {
 
         const data = await query.populate({path:"review",model:"Reviews"})
         .then((result)=>{return result}).catch((err)=>console.log(err));
-;
 
         const totalResults = await productModel.countDocuments()
 

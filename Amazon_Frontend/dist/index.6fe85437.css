@@ -137,10 +137,15 @@
 .card {
   color: #000;
   background-color: #40e0d0;
+  border-radius: 8%;
   max-width: 300px;
   max-height: 500px;
   margin: 1em;
   padding: 1em;
+}
+
+.card:hover {
+  scale: 1.1;
 }
 
 .card-img {

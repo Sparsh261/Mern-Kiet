@@ -27325,7 +27325,14 @@ const Navbar = ({ setQuery })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 class: "nav-logo border",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    class: "logo"
+                    class: "logo",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        name: "top"
+                    }, void 0, false, {
+                        fileName: "src/pages/homepage/Navbar.js",
+                        lineNumber: 18,
+                        columnNumber: 17
+                    }, undefined)
                 }, void 0, false, {
                     fileName: "src/pages/homepage/Navbar.js",
                     lineNumber: 17,
@@ -27702,7 +27709,7 @@ const Carousel = ({ query })=>{
             }).then((res)=>res.json()).then((r)=>{
                 setData(r.data.product);
             }).catch((err)=>console.log(err));
-            console.log(data);
+        //     console.log(data);
         } else {
             const shorturl = await fetch("http://localhost:1400/products", {
                 method: "GET",
@@ -27729,12 +27736,12 @@ const Carousel = ({ query })=>{
                     children: "You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. Click here to go to amazon.in"
                 }, void 0, false, {
                     fileName: "src/pages/homepage/Carousel.js",
-                    lineNumber: 49,
+                    lineNumber: 44,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/homepage/Carousel.js",
-                lineNumber: 48,
+                lineNumber: 43,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27745,24 +27752,24 @@ const Carousel = ({ query })=>{
                             elem: elem
                         }, void 0, false, {
                             fileName: "src/pages/homepage/Carousel.js",
-                            lineNumber: 59,
+                            lineNumber: 54,
                             columnNumber: 29
                         }, undefined)
                     }, elem.id_, false, {
                         fileName: "src/pages/homepage/Carousel.js",
-                        lineNumber: 58,
+                        lineNumber: 53,
                         columnNumber: 25
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/pages/homepage/Carousel.js",
-                lineNumber: 55,
+                lineNumber: 50,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/homepage/Carousel.js",
-        lineNumber: 47,
+        lineNumber: 42,
         columnNumber: 9
     }, undefined);
 };
@@ -27784,25 +27791,6 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$c3bd.prelude(module);
 
 try {
-// const elem = {
-//     "id": 1,
-//     "title": "iPhone 9",
-//     "description": "An apple mobile which is nothing like apple",
-//     "price": 549,
-//     "discountPercentage": 12.96,
-//     "rating": 4.69,
-//     "stock": 94,
-//     "brand": "Apple",
-//     "category": "smartphones",
-//     "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-//     "images": [
-//         "https://cdn.dummyjson.com/product-images/1/1.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/2.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/3.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/4.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
-//     ]
-// }
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Card = ({ elem })=>{
     // console.log(1)
@@ -27814,7 +27802,7 @@ const Card = ({ elem })=>{
                 children: elem.title
             }, void 0, false, {
                 fileName: "src/pages/homepage/card.js",
-                lineNumber: 24,
+                lineNumber: 6,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27823,15 +27811,15 @@ const Card = ({ elem })=>{
                 alt: ""
             }, void 0, false, {
                 fileName: "src/pages/homepage/card.js",
-                lineNumber: 25,
+                lineNumber: 7,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: "card-button",
-                children: "Visit page"
+                children: "Add to cart"
             }, void 0, false, {
                 fileName: "src/pages/homepage/card.js",
-                lineNumber: 26,
+                lineNumber: 8,
                 columnNumber: 17
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27842,7 +27830,7 @@ const Card = ({ elem })=>{
                 ]
             }, void 0, true, {
                 fileName: "src/pages/homepage/card.js",
-                lineNumber: 27,
+                lineNumber: 9,
                 columnNumber: 17
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27850,13 +27838,13 @@ const Card = ({ elem })=>{
                 children: elem.description
             }, void 0, false, {
                 fileName: "src/pages/homepage/card.js",
-                lineNumber: 28,
+                lineNumber: 10,
                 columnNumber: 17
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/homepage/card.js",
-        lineNumber: 23,
+        lineNumber: 5,
         columnNumber: 9
     }, undefined);
 };
@@ -27983,7 +27971,14 @@ const Footer = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 class: "to-top",
-                children: "Back to top"
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                    href: "#top",
+                    children: "Back to top"
+                }, void 0, false, {
+                    fileName: "src/pages/homepage/Footer.js",
+                    lineNumber: 6,
+                    columnNumber: 13
+                }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/homepage/Footer.js",
                 lineNumber: 5,

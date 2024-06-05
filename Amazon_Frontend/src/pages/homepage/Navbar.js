@@ -15,7 +15,7 @@ const Navbar = ({setQuery}) => {
         <div class="navbar ">
             <div class="nav-logo border">
                 <div class="logo">
-
+                <a name="top"></a>
                 </div>
             </div>
 

@@ -154,6 +154,10 @@
     max-width: 300px;
     max-height: 500px;
     color: black;
+    border-radius: 8%;
+}
+.card:hover{
+    scale: 1.1;
 }
 
 .card-img{
